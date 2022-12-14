@@ -1,0 +1,63 @@
+CRITICAL - 2022-10-06 15:54:16 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\nftmarketplace\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\nftmarketplace\system\Controller.php(130): CodeIgniter\Database\BaseConnection->query('SET SESSION sql...')
+#2 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\BaseController.php(45): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(899): App\Modules\Website\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(407): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-10-06 16:05:34 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\nftmarketplace\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\nftmarketplace\system\Controller.php(130): CodeIgniter\Database\BaseConnection->query('SET SESSION sql...')
+#2 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\BaseController.php(45): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(899): App\Modules\Website\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(407): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-10-06 16:06:42 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\nftmarketplace\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\nftmarketplace\system\Controller.php(130): CodeIgniter\Database\BaseConnection->query('SET SESSION sql...')
+#2 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\BaseController.php(45): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(899): App\Modules\Website\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(407): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-10-06 16:06:43 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\nftmarketplace\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\nftmarketplace\system\Controller.php(130): CodeIgniter\Database\BaseConnection->query('SET SESSION sql...')
+#2 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\BaseController.php(45): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(899): App\Modules\Website\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(407): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-10-06 16:06:43 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\nftmarketplace\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\nftmarketplace\system\Controller.php(130): CodeIgniter\Database\BaseConnection->query('SET SESSION sql...')
+#2 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\BaseController.php(45): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(899): App\Modules\Website\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(407): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-10-06 16:06:43 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\nftmarketplace\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\nftmarketplace\system\Controller.php(130): CodeIgniter\Database\BaseConnection->query('SET SESSION sql...')
+#2 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\BaseController.php(45): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(899): App\Modules\Website\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(407): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-10-06 16:06:43 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\nftmarketplace\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\nftmarketplace\system\Controller.php(130): CodeIgniter\Database\BaseConnection->query('SET SESSION sql...')
+#2 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\BaseController.php(45): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(899): App\Modules\Website\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(407): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#7 {main}

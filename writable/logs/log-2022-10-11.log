@@ -1,0 +1,151 @@
+CRITICAL - 2022-10-11 18:19:05 --> Undefined variable: data
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 1320, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-11 18:19:54 --> Undefined variable: data
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 1320, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-11 18:20:01 --> Undefined variable: frontendAssets
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_details.php(1): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 1, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): view('themes/website_...')
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 18:31:16 --> Undefined variable: data
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 1320, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-11 18:31:36 --> Undefined variable: title
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\activity.php(1): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 1, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): view('themes/website_...')
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 18:52:19 --> Undefined variable: frontendAssets
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 8, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): view('themes/website_...')
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 18:52:46 --> Undefined variable: frontendAssets
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(8): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 8, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1321): view('themes/website_...')
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 18:54:00 --> Undefined variable: settings
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 11, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1321): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 18:57:32 --> Undefined variable: settings
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(14): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 14, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1321): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 18:57:41 --> Undefined variable: settings
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 23, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1321): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 18:57:50 --> Undefined variable: settings
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(143): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 143, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1321): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 19:51:54 --> Undefined variable: title
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): view('themes/website_...')
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 19:52:04 --> Undefined variable: title
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 7, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): view('themes/website_...')
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 19:52:15 --> Undefined variable: collections
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 86, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): view('themes/website_...')
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 19:52:40 --> Undefined variable: network
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 88, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): view('themes/website_...')
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-10-11 19:52:55 --> Undefined variable: frontendAssets
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\nft_request_form.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 100, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1320): view('themes/website_...')
+#4 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#8 {main}

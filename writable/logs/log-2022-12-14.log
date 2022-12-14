@@ -1,0 +1,9 @@
+CRITICAL - 2022-12-14 15:35:12 --> Unable to connect to the database.
+#0 /Applications/MAMP/htdocs/nftmarketplace/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 /Applications/MAMP/htdocs/nftmarketplace/system/Controller.php(130): CodeIgniter\Database\BaseConnection->query('SET SESSION sql...')
+#2 /Applications/MAMP/htdocs/nftmarketplace/app/Modules/Website/Controllers/BaseController.php(45): CodeIgniter\Controller->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#3 /Applications/MAMP/htdocs/nftmarketplace/system/CodeIgniter.php(899): App\Modules\Website\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#4 /Applications/MAMP/htdocs/nftmarketplace/system/CodeIgniter.php(407): CodeIgniter\CodeIgniter->createController()
+#5 /Applications/MAMP/htdocs/nftmarketplace/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/MAMP/htdocs/nftmarketplace/index.php(64): CodeIgniter\CodeIgniter->run()
+#7 {main}

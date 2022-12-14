@@ -1,0 +1,249 @@
+CRITICAL - 2022-10-21 13:46:05 --> Call to undefined method App\Modules\Website\Controllers\Home::session()
+#0 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-21 13:53:55 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 13:54:31 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 13:54:32 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 13:54:32 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 13:54:32 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 13:54:33 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 13:54:33 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 13:54:33 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 13:54:33 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 13:54:33 --> Undefined property: CodeIgniter\View\View::$session
+#0 C:\xampp\htdocs\nftmarketplace\app\Views\themes\website_template\header.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 99, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('themes/website_...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(93): view('themes/website_...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(1319): App\Libraries\Template->website_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->request_NFT()
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-21 16:07:32 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:35 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:37 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:39 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:39 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:39 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:39 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:39 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:39 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:40 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:07:40 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:13:47 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:15:52 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:15:54 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:15:54 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:15:54 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:15:54 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:16:11 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-21 16:16:12 --> Undefined offset: 0
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Website\Controllers\Home.php(476): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 476, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Website\Controllers\Home->login_action()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Website\Controllers\Home))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}

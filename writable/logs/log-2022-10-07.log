@@ -1,0 +1,65 @@
+CRITICAL - 2022-10-07 16:30:09 --> Array to string conversion
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\User\Controllers\Admin\User.php(53): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 53, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\User\Controllers\Admin\User->ajax_list()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\User\Controllers\Admin\User))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-07 16:30:51 --> Cannot use [] for reading
+#0 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\User\Controllers\Admin\User->ajax_list()
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\User\Controllers\Admin\User))
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-07 16:32:12 --> Cannot use [] for reading
+#0 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\User\Controllers\Admin\User->ajax_list()
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\User\Controllers\Admin\User))
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-10-07 16:35:29 --> Array to string conversion
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\User\Controllers\Admin\User.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 83, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\User\Controllers\Admin\User->ajax_list()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\User\Controllers\Admin\User))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-07 17:45:12 --> Undefined variable: languageList
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\User\Views\Admin\user\form.php(59): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 59, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('App\\Modules\\Use...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(37): view('App\\Modules\\Use...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\User\Controllers\Admin\User.php(204): App\Libraries\Template->admin_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\User\Controllers\Admin\User->form('1')
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\User\Controllers\Admin\User))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-07 17:45:27 --> Undefined variable: languageList
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\User\Views\Admin\user\form.php(59): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 59, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('App\\Modules\\Use...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(37): view('App\\Modules\\Use...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\User\Controllers\Admin\User.php(204): App\Libraries\Template->admin_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\User\Controllers\Admin\User->form('1')
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\User\Controllers\Admin\User))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-07 17:45:34 --> Undefined variable: languageList
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\User\Views\Admin\user\form.php(59): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 59, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\nftmarketplace\system\Common.php(1119): CodeIgniter\View\View->render('App\\Modules\\Use...', Array, true)
+#3 C:\xampp\htdocs\nftmarketplace\app\Libraries\Template.php(37): view('App\\Modules\\Use...', Array)
+#4 C:\xampp\htdocs\nftmarketplace\app\Modules\User\Controllers\Admin\User.php(204): App\Libraries\Template->admin_layout(Array)
+#5 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\User\Controllers\Admin\User->form('1')
+#6 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\User\Controllers\Admin\User))
+#7 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-10-07 18:42:07 --> Call to undefined method App\Modules\User\Controllers\Admin\User::request()
+#0 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\User\Controllers\Admin\User->form('1')
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\User\Controllers\Admin\User))
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#4 {main}

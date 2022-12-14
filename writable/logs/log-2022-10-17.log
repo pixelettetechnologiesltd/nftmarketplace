@@ -1,0 +1,28 @@
+CRITICAL - 2022-10-17 18:57:47 --> Undefined property: App\Modules\Nfts\Controllers\Admin\Nfts_setup::$load
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Nfts\Controllers\Admin\Nfts_setup.php(546): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 546, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Nfts\Controllers\Admin\Nfts_setup->approval('2')
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Nfts\Controllers\Admin\Nfts_setup))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-17 19:01:12 --> Call to undefined function _get_validation_object()
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Setting\Controllers\Admin\Setting.php(302): validation_errors()
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Setting\Controllers\Admin\Setting->test_email()
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Setting\Controllers\Admin\Setting))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-17 19:45:04 --> Undefined variable: subject
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Nfts\Controllers\Admin\Nfts_setup.php(559): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 559, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Nfts\Controllers\Admin\Nfts_setup->approval('2')
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Nfts\Controllers\Admin\Nfts_setup))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-10-17 19:48:59 --> Undefined property: App\Modules\Nfts\Controllers\Admin\Nfts_setup::$load
+#0 C:\xampp\htdocs\nftmarketplace\app\Modules\Nfts\Controllers\Admin\Nfts_setup.php(546): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 546, Array)
+#1 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(926): App\Modules\Nfts\Controllers\Admin\Nfts_setup->approval('2')
+#2 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Nfts\Controllers\Admin\Nfts_setup))
+#3 C:\xampp\htdocs\nftmarketplace\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\nftmarketplace\index.php(64): CodeIgniter\CodeIgniter->run()
+#5 {main}
