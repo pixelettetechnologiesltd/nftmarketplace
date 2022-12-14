@@ -1,0 +1,23 @@
+CRITICAL - 2022-11-13 13:39:00 --> opendir(/Applications/MAMP/htdocs/other/investing-together/app/Views/themes/arslan): failed to open dir: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'opendir(/Applic...', '/Applications/M...', 206, Array)
+#1 /Applications/MAMP/htdocs/other/investing-together/app/Modules/Addon/Controllers/Theme.php(206): opendir('/Applications/M...')
+#2 /Applications/MAMP/htdocs/other/investing-together/app/Modules/Addon/Controllers/Theme.php(235): App\Modules\Addon\Controllers\Theme->delete_dir('/Applications/M...')
+#3 /Applications/MAMP/htdocs/other/investing-together/system/CodeIgniter.php(926): App\Modules\Addon\Controllers\Theme->theme_delete('arslan')
+#4 /Applications/MAMP/htdocs/other/investing-together/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\Addon\Controllers\Theme))
+#5 /Applications/MAMP/htdocs/other/investing-together/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Applications/MAMP/htdocs/other/investing-together/index.php(64): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-11-13 13:57:14 --> Undefined index: 
+#0 /Applications/MAMP/htdocs/other/investing-together/system/HTTP/URI.php(290): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Applications/M...', 290, Array)
+#1 /Applications/MAMP/htdocs/other/investing-together/system/HTTP/URI.php(1047): CodeIgniter\HTTP\URI->getAuthority()
+#2 /Applications/MAMP/htdocs/other/investing-together/system/Helpers/url_helper.php(128): CodeIgniter\HTTP\URI->resolveRelativeURI('http://localhos...')
+#3 /Applications/MAMP/htdocs/other/investing-together/app/Modules/System_user/Views/Admin/edit_profile.php(55): base_url('http://localhos...')
+#4 /Applications/MAMP/htdocs/other/investing-together/system/View/View.php(246): include('/Applications/M...')
+#5 /Applications/MAMP/htdocs/other/investing-together/system/Common.php(1119): CodeIgniter\View\View->render('App\\Modules\\Sys...', Array, true)
+#6 /Applications/MAMP/htdocs/other/investing-together/app/Libraries/Template.php(37): view('App\\Modules\\Sys...', Array)
+#7 /Applications/MAMP/htdocs/other/investing-together/app/Modules/System_user/Controllers/Admin/Admin.php(227): App\Libraries\Template->admin_layout(Array)
+#8 /Applications/MAMP/htdocs/other/investing-together/system/CodeIgniter.php(926): App\Modules\System_user\Controllers\Admin\Admin->edit_profile()
+#9 /Applications/MAMP/htdocs/other/investing-together/system/CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Modules\System_user\Controllers\Admin\Admin))
+#10 /Applications/MAMP/htdocs/other/investing-together/system/CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/other/investing-together/index.php(64): CodeIgniter\CodeIgniter->run()
+#12 {main}

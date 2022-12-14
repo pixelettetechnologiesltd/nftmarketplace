@@ -1,0 +1,9 @@
+CRITICAL - 2022-10-29 02:19:39 --> Required parameter $alias follows optional parameter $params
+#0 /Applications/MAMP/htdocs/investing-together/system/Autoloader/Autoloader.php(365): CodeIgniter\Debug\Exceptions->errorHandler(8192, 'Required parame...', '/Applications/M...', 73)
+#1 /Applications/MAMP/htdocs/investing-together/system/Autoloader/Autoloader.php(365): require_once()
+#2 /Applications/MAMP/htdocs/investing-together/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/Applications/M...')
+#3 /Applications/MAMP/htdocs/investing-together/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('CodeIgniter\\Dat...')
+#4 /Applications/MAMP/htdocs/investing-together/system/Database/Config.php(195): CodeIgniter\Autoloader\Autoloader->loadClass('CodeIgniter\\Dat...')
+#5 /Applications/MAMP/htdocs/investing-together/system/Database/Config.php(108): CodeIgniter\Database\Config::ensureFactory()
+#6 /Applications/MAMP/htdocs/investing-together/index.php(45): CodeIgniter\Database\Config::connect('default')
+#7 {main}

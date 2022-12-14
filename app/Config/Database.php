@@ -36,7 +36,7 @@ class Database extends \CodeIgniter\Database\Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => 'root',
-        'database' => 'nft_2',
+        'database' => 'nft',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => 'dbt_',
         'pConnect' => true,
