@@ -57,7 +57,8 @@ class Home extends BaseController
         $data['total_data']         = $total;
         $data['page_limit']         = $limit;
         $data['content']            = view('themes/'.$this->templte_name->name.'/index',$data);
-
+        $data['f_name']     = (isset($this->isUser) ? $this->common_model->where_row('user', ['user_id'=>$this->userId])->f_name  : ''); 
+        $data['l_name']     = (isset($this->isUser) ? $this->common_model->where_row('user', ['user_id'=>$this->userId])->l_name  : ''); 
         return $this->template->website_layout($data);
 
     }
@@ -92,9 +93,6 @@ class Home extends BaseController
         $data['frontendAssets']     = base_url('public/assets/website');
         $data['userId']             = (isset($this->userId)) ? $this->userId : ''; 
         $data['isUser']             = (isset($this->isUser) ? $this->isUser : ''); 
-
-        $data['loggedinWallet']     = (isset($this->isUser) ? $this->common_model->where_row('user', ['user_id'=>$this->userId])->wallet_address : ''); 
-
         $data['title']              = display("NFT Details"); 
         $data['networks']           = $this->common_model->where_row('blockchain_network', array('id' => $info->blockchain_id));
       
@@ -115,6 +113,7 @@ class Home extends BaseController
         if(empty($collectionInfo)){
             return redirect()->to(base_url());
         }
+        
         $data['ownerInfo'] = $this->common_model->where_row('user', ['user_id'=>$collectionInfo->user_id]);
          
         $data['totalItem'] = $this->web_model->countRow('nfts_store', ['collection_id'=>$collectionInfo->id, 'status'=>3]);
@@ -155,7 +154,7 @@ class Home extends BaseController
         if(!isset($categoryInfo)){
             return redirect()->to(base_url()); 
         }
-
+        
         $data['collections']    = $this->common_model->where_rows('nft_collection', array('category_id'=>$categoryInfo->id), 'id', 'asc');
         $data['actegories']     = $this->common_model->where_rows('nft_category', array(), 'id', 'asc'); 
         $data['total']          = $this->web_model->countRow('nfts_store', ['category_id'=>$categoryInfo->id, 'status'=>3]);

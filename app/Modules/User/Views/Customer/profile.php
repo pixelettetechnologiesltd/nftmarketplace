@@ -105,12 +105,13 @@
                                         <input type="email" class="form-control" name="email" id="email" value="<?php echo esc($profile->email) ?>" placeholder="name@example.com">
                                     </div>
                                     <div class="mb-4">
+                                        <label for="refer_id" class="form-label fw-semi-bold text-black mb-1"><?php echo display('Reference ID'); ?></label><span class="text-danger"> *</span>
+                                        <input type="text" class="form-control" name="refernce_id" id="refernce_id" value="<?php echo esc('UID000'.$profile->uid) ?>" placeholder="Reference ID">
+                                    </div>
+                                    <div class="mb-4">
                                         <label for="wallet-address" class="form-label fw-semi-bold text-black mb-1"><?php echo display('Wallet_Address'); ?></label>
                                         <div class="wallet-address"> 
-
                                             <input type="text" value="<?php echo $profile->wallet_address; ?>" class="form-control" id="mywallet" readonly="readonly">
-
-
                                             <div class="tooltips">
                                                 <button id="copy-wallet" type="button">
                                                     <span class="tooltiptext" id="myTooltip"><?php echo display('Copy_to_clipboard'); ?></span>
@@ -158,7 +159,7 @@
                                                                 <circle cx="12" cy="13" r="4"></circle>
                                                             </svg>
                                                         </div>
-                                                         
+    
                                                     </div>
                                                 </label>
                                             </div>
@@ -166,7 +167,7 @@
                                             <p class="fw-medium text-center small m-0"><?php echo display('Banner_picture_recommended'); ?> </p>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-dark w-100 btn-profile mt-4"><?php echo display('Update_Profile'); ?></button>
+                                    <button type="submit" class="btn btn-dark w-100 btn-profile mt-4" onClick="window.location.reload();"><?php echo display('Update_Profile');  ?></button>
                                
                             </div>
                         <?php echo form_close(); ?>
@@ -202,11 +203,7 @@
                                     <div>
                                         <button type="submit" class="btn btn-primary sendButton"><?php echo display('Send'); ?></button>
                                     </div>
- 
                                 <?php echo form_close(); ?>
-                                
-                                 
-                               
                             </div>
                         </div>
                     </div>
