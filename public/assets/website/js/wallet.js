@@ -292,7 +292,7 @@ async function requestNftTrx(reqId = "") {
     const signer = provider.getSigner();
     const tx = await signer.sendTransaction({
       to: "0x729EA13065E065c7051062163295ea53CB0a9E5A",
-      value: ethers.utils.parseEther("1.0"),
+      value: ethers.utils.parseEther("0.1"),
     });
 
     // const contract = new ethers.Contract(contractAddress, nftabi, signer);
