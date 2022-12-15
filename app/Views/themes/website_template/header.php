@@ -107,7 +107,7 @@
                     <?php } ?>   
                 </li> -->
                
-                <?php if($session->userdata('isLogIn') && $f_name!='' && $l_name!=''){ ?>
+                <?php if($session->userdata('isLogIn') && isset($f_name)!='' && isset($l_name)!=''){ ?>
                      <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                          data-bs-toggle="dropdown" aria-expanded="false">
