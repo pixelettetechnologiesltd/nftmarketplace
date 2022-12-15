@@ -11,12 +11,15 @@ class Profile extends BaseController {
     */ 
 	public function index()
 	{  
+        $this->session->userdata('user_id');
         $user_id = $this->session->userdata('user_id');
+        
         $where = array(
             'user_id' => $user_id
         );
+    
         $userInfo = $this->common_model->read('user',$where);
-
+    
         $this->validation->setRule('first_name', display('firstname'), 'required|alpha_space');
         $this->validation->setRule('last_name', display('lastname'), 'required|alpha_space');  
  
@@ -92,7 +95,7 @@ class Profile extends BaseController {
         $data['languageList'] = $this->languageList(); 
         
         $data['profile'] = $userInfo; 
-
+         
         $data['acInfo'] = $this->common_model->read('user_account',$where); 
         $data['contractInfo'] = $this->common_model->read('contract_setup', ['status' => 1]); 
 
@@ -100,7 +103,8 @@ class Profile extends BaseController {
         $data['network'] = $this->common_model->where_row('blockchain_network', array('status' => 1));
 
 
-        
+        $data['f_name']     =  $this->common_model->where_row('user', ['user_id'=>$this->session->userdata('user_id')])->f_name ; 
+        $data['l_name']     =  $this->common_model->where_row('user', ['user_id'=>$this->session->userdata('user_id')])->l_name ; 
         $data['frontendAssets'] = base_url('public/assets/website');
         $data['content']        = view($this->BASE_VIEW . '\profile',$data);
         return $this->template->website_layout($data);

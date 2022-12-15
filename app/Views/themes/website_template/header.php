@@ -83,6 +83,7 @@
                     </div>
                 </div>
             </div>
+           
             <ul class="navbar-nav">
                   <li class="nav-item">
                    
@@ -105,7 +106,25 @@
                         <a class="nav-link" href="<?php echo base_url('nfts/create'); ?>"><?php echo display('Requst For NFT'); ?></a>
                     <?php } ?>   
                 </li> -->
-                <li class="nav-item dropdown">
+               
+                <?php if($session->userdata('isLogIn') && isset($f_name)!='' && isset($l_name)!=''){ ?>
+                     <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                         data-bs-toggle="dropdown" aria-expanded="false">
+                         <?php echo display('Search'); ?>
+                     </a>
+                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                         <li><a class="dropdown-item" href="<?php echo base_url('all'); ?>"><?php echo display('All_NFTs'); ?></a></li>
+                         <?php foreach ($categories as $key => $category) {
+                              echo '<li><a class="dropdown-item" href="'.base_url("category").'/'.esc($category->slug).'">'.esc($category->cat_name).'</a></li>';
+                         } ?>
+                         
+                     </ul>
+                 </li> 
+                <?php } else{
+                    if(!$session->userdata('isLogIn')){
+                    ?>
+                    <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <?php echo display('Search'); ?>
@@ -117,7 +136,8 @@
                         } ?>
                         
                     </ul>
-                </li> 
+                </li>      
+                    <?php } } ?>
                 <?php if(!$session->userdata('isLogIn')){ ?>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:;" id="connect_wallet"><img width="30px" src="<?php echo base_url('public/assets/images/icons/metamask.png'); ?>"><?php echo display('Connect'); ?></a>
