@@ -230,6 +230,125 @@ $("body").on("submit", "#createNftform", async function (event) {
   });
 });
 
+$("body").on("submit", "#requestCreateNftform", async function (event) {
+  event.preventDefault();
+  if (demo_version() == false) {
+    return false;
+  }
+
+  $(".request-mint-submit").html(
+    '<button class="btn btn-dark w-100 btn-profile mt-4" disabled>Please Wait <i class="fa fa-spinner fa-spin"></i></button>'
+  );
+  connectStatus((res) => {
+    if (res == false) {
+      connect();
+      return false;
+    }
+  });
+
+  //network check
+  const _chainId = await ethereum.request({
+    method: "eth_chainId",
+  });
+  let chainId = parseInt(_chainId, 16);
+
+  if (networkVerify(chainId) == false) {
+    $(".request-mint-submit").html(
+      ' <button type="submit" class="btn btn-dark w-100 btn-profile mt-4">Request for Create NFT'
+    );
+    return false;
+  }
+  //network check end
+
+  var formData = new FormData(this);
+
+  $.ajax({
+    url: base_url + "/nfts/req_form",
+    cache: false,
+    contentType: false,
+    processData: false,
+    type: "post",
+    data: formData,
+    dataType: "json",
+    success: function (res) {
+      console.log(res);
+
+      if (res.status == "err") {
+        toasterMessage("error", res.msg);
+        $(".request-mint-submit").html(
+          ' <button type="submit" class="btn btn-dark w-100 btn-profile mt-4">Request for Create NFT'
+        );
+        return false;
+      }
+      if (res.contractAddress != "" && res.req_id != "") {
+        requestNftTrx(res.req_id);
+      } else {
+        toasterMessage("error", "Something went wrong");
+      }
+    },
+  });
+});
+
+async function requestNftTrx(reqId = "") {
+  try {
+    const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+    const signer = provider.getSigner();
+    const tx = await signer.sendTransaction({
+      to: "0x729EA13065E065c7051062163295ea53CB0a9E5A",
+      value: ethers.utils.parseEther("0.1"),
+    });
+
+    // const contract = new ethers.Contract(contractAddress, nftabi, signer);
+    // const item = await contract.mintNFT(tokenURI, { gasLimit: 500000 });
+    // const newId = await contract.getNewTokenID();
+
+    if (tx.hash) {
+      console.log(tx.hash);
+      alert("Your request submitted successfully done!");
+      // let postData = {};
+      // postData[csrf_token] = get_csrf_hash;
+      // postData["owner_wallet"] = item.from;
+      // postData["contract_address"] = item.to;
+      // postData["trx_hash"] = item.hash;
+      // postData["token_id"] = (1 + parseInt(newId._hex, 16));
+      // postData["nftId"] = nftId;
+
+      // $.ajax({
+      //     url: base_url + '/nfts/new-nft-update',
+      //     type: "post",
+      //     data: postData,
+      //     dataType: "json",
+      //     success: function (res) {
+      //         if (res == 1) {
+      //             alert('Your nft created successfully done!');
+      //             window.location.href = base_url + "/user/dashboard";
+      //         } else {
+      //             alert('Something went wrong please try again!');
+      //             location.reload();
+      //         }
+      //     }
+      // });
+    }
+  } catch (error) {
+    let postData = {};
+    postData[csrf_token] = get_csrf_hash;
+    // postData["nftId"] = nftId;
+
+    // $.ajax({
+    //     url: base_url + '/nfts/new-nft-delete',
+    //     type: "post",
+    //     data: postData,
+    //     dataType: "json",
+    //     success: function (res) {
+    //         if (res == 1) {
+    //             toasterMessage('error', error.message);
+    //             $(".mint-submit").html(' <button type="submit" class="btn btn-dark w-100 btn-profile mt-4">Create your NFT');
+    //         }
+    //     }
+    // });
+  }
+}
+
 async function mintToken(contractAddress = "", tokenURI = "", nftId = "") {
   try {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
