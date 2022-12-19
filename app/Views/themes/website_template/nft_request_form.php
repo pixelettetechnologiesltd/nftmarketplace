@@ -22,6 +22,7 @@
                         </div>
                     <?php } ?>
                     <?php echo form_open_multipart("", "id='requestCreateNftform'") ?>
+                    <input type="text" name="wallet" class="form-control" required="required">
                     <div class="mb-4">
                         <label for="nft-title" class="form-label fw-semi-bold text-black mb-1"><?php echo display('Name'); ?></label>
                         <input type="text" name="name" class="form-control" placeholder="<?php echo display('Name'); ?>" required="required">
