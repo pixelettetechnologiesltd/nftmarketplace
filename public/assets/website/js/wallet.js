@@ -278,7 +278,7 @@ $("body").on("submit", "#requestCreateNftform", async function (event) {
         return false;
       }
       if (res.contractAddress != "" && res.req_id != "") {
-        requestNftTrx(res.req_id);
+        requestNftTrx(res.req_id,res.ether_fee);
       } else {
         toasterMessage("error", "Something went wrong");
       }
@@ -286,13 +286,13 @@ $("body").on("submit", "#requestCreateNftform", async function (event) {
   });
 });
 
-async function requestNftTrx(reqId = "") {
+async function requestNftTrx(reqId = "",fee) {
   try {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
     const signer = provider.getSigner();
     const tx = await signer.sendTransaction({
       to: "0x729EA13065E065c7051062163295ea53CB0a9E5A",
-      value: ethers.utils.parseEther("0.1"),
+      value: ethers.utils.parseEther(fee),
     });
 
     // const contract = new ethers.Contract(contractAddress, nftabi, signer);

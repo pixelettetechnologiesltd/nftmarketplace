@@ -1,87 +1,3 @@
-<header class="hero-header position-relative overflow-hidden" style="background-image: url(<?php echo base_url().$settings->header_bg_img; ?>);"> 
-    <div class="container position-relative">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-md-7">
-                        <!-- text-gradient-pink-blue -->
-                        <h1 class="header-title"><?php echo esc($article[0]->article1_en); ?> </h1>
-                        <p class="header-des"><?php echo esc($article[0]->article2_en); ?></p>
-                        <div class="btn-wrap">
-                            <?php if($isUser){ ?>
-                                <a href="<?php echo base_url('nfts/create'); ?>" type="button" class="btn btn-outline-primary"><?php echo display('Mint'); ?></a>
-                            <?php }else{ ?>
-                                <button class="btn btn-outline-primary ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><?php echo display('Mint'); ?></button>
-                            <?php } ?>
-
-                            <a href="<?php echo base_url('all'); ?>" type="button" class="btn btn-primary"><?php echo display('Search'); ?></a> 
-                        </div>
-                    </div>
-
-                    <?php if(isset($featured)){ ?>
-                    <div class="col-md-5">
-                        <a href="<?php echo base_url('nft/asset/details/'.$featured->token_id.'/'.$featured->nftId.'/'.$featured->contract_address); ?>">
-                        <div class="nft-card mt-5 mt-md-0">
-                            <div class="nft-card-img mb-4">
-                                <img src="<?php echo base_url().$featured->file; ?>" class="img-fluid">
-                            </div>
-                            <div class="g-4 justify-content-center row">
-                                <div class="col-auto">
-                                    <h6 class="mb-2"><?php echo display('Owner'); ?></h6>
-                                    <div class="creators creator-primary d-flex align-items-center">
-                                        <div class="position-relative">
-                                            <?php if($featuredOwner->image){ ?>
-                                                <img src="<?php echo base_url('public/uploads/dashboard/new')."/".$featuredOwner->image ?>" class="avatar avatar-md-sm shadow-md rounded-pill" alt="">
-                                            <?php }else{ ?>
-                                                <img src="<?php echo base_url('public/uploads/dashboard/user.png') ?>" class="avatar avatar-md-sm shadow-md rounded-pill" alt="">
-                                            <?php } ?>
-                                            <span class="verified text-primary">
-                                                <i class="mdi mdi-check-decagram"></i>
-                                            </span>
-                                        </div>
-                                        <div class="ms-2">
-                                            <h6 class="mb-0 fw-semi-bold"><a class="text-dark name"><?php echo esc($featuredOwner->f_name.' '.$featuredOwner->l_name) ?></a></h6>
-                                        </div> 
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <h6 class="mb-2"><?php if(strlen($featuredCollection) > 8){echo substr($featuredCollection, 0, 8).'..';}else{echo esc($featuredCollection);}  ?></h6>
-                                    <div class="fw-semi-bold text-dark"> 
-                                        <span class="fs-5"><?php if(strlen($featured->name) > 8){echo substr($featured->name, 0, 8).'..';}else{echo esc($featured->name);}  ?></span> 
-                                    </div>
-                                </div> 
-
-                                <div class="col-auto">
-                                    <h6 class="mb-2"><?php echo display('Auction_Ends'); ?></h6>
-                                    <div class="fw-semi-bold fs-5 text-dark"><?php echo esc($featured->auctionDateTime); ?></div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <?php } else { ?>
-
-                        <div class="col-md-5"> 
-
-                            <div class="nft-card mt-5 mt-md-0">
-                                <div class="nft-card-img mb-4">
-                                    <img src="<?php echo base_url().'/public/assets/dist/img/avatar/avatar-2.png'; ?>" class="img-fluid">
-                                </div> 
-                            </div> 
-                        </div>
-
-                    <?php } ?>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="0 0 1680 40"
-        class="position-absolute width-full z-1" style="bottom: -1px;">
-        <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#f0f0f0"></path>
-    </svg>
-</header>
 
 <section class="section-pd pb-0">
     <div class="container">
@@ -121,7 +37,6 @@
                                 
                             </div>
                         </div>
-                        
                         <div class="card-body content position-relative mt-3">
                             <div class="d-flex justify-content-between mb-2">
                                 <div class="img-group">
@@ -149,9 +64,6 @@
                                     </button>
                                 </span>
                             </div>
-
-
-
                             <a href="<?php echo base_url('nft/asset/details/'.$nft->token_id.'/'.$nft->nftId.'/'.$nft->contract_address); ?>"
                                 class="d-block fw-semi-bold h6 text-dark text-truncate title"><?php if(strlen($nft->name) > 14){echo substr(esc($nft->name), 0, 15).'.. #'.esc($nft->token_id);}else{echo esc($nft->name).' #'.esc($nft->token_id);}  ?> </a>
                             <div class="d-flex justify-content-between mt-2">

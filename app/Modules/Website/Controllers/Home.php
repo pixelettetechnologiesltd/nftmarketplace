@@ -9,9 +9,6 @@ class Home extends BaseController
         // write your __construct
    
     }
-
-
-
     public function index()
     {
         
