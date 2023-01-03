@@ -99,10 +99,7 @@
                                 </td>
                             </tr>
                             <?php } } ?>
-                            <?php if(isset($fees_data)){ 
-                                foreach ($fees_data as $key => $value) {  ?>
-                                <input type="text"  value=<?php echo $value->ether_fees ?> class=<?php echo "fee".$key?>>
-                                <?php  }} ?>
+                            
                         </tbody>
                     </table>
                 </div>

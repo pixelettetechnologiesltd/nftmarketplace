@@ -263,7 +263,6 @@ class Home extends BaseController
         return $this->template->website_layout($data);
      
     } 
- 
     public function about()
     {
 

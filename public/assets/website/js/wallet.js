@@ -198,7 +198,6 @@ $("body").on("submit", "#createNftform", async function (event) {
   }
   $(".img-empty-msg").text("");
   var formData = new FormData(this);
-
   $.ajax({
     url: base_url + "/nfts/create-action",
     cache: false,
@@ -258,7 +257,6 @@ $("body").on("submit", "#requestCreateNftform", async function (event) {
   //network check end
 
   var formData = new FormData(this);
-
   $.ajax({
     url: base_url + "/nfts/req_form",
     cache: false,
