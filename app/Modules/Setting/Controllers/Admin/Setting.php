@@ -147,11 +147,19 @@ class Setting extends BaseController {
              }else{
                 $fees = array(
                     'level' =>$this->request->getVar('level'),
-                    'fees'  =>$this->request->getVar('fees')
+                    'fees'  =>$this->request->getVar('fees'),
+                );          
+                $ether_fees = array(
+                    'ether_fees'=>$this->request->getVar('ether_fees')
                 );
-                $this->common_model->insert('fees_tbl',$fees);
-                $this->session->setFlashdata('message',display('fees_setting_successfully'));
-                return  redirect()->to(base_url('backend/setting/fees_setting'));
+                $this->db->table('fees_tbl')->insert($fees);
+                $this->db->table('fees_tbl')->update($ether_fees);
+                 $data['ethers']  = $this->db->table('fees_tbl')->select('ether_fees')->get()->getResult();
+                 $data['content'] = $this->BASE_VIEW . '\fees_setting';
+                 $data['fees_data']= $this->common_model->get_all('fees_tbl',$where=array(),0,0,'id','asc');
+                 $this->session->setFlashdata('message',display('fees_setting_successfully'));
+                 return $this->template->admin_layout($data);
+                
              }
     }
                

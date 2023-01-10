@@ -39,6 +39,7 @@
                                 </div>
                             </div>
 
+
                             <div class="card-body content position-relative mt-3">
                                 <div class="d-flex justify-content-between mb-2">
                                     <div class="img-group">
@@ -75,8 +76,35 @@
                                 <div class="d-flex justify-content-between mt-2">
                                     <small class="rate fw-semi-bold text-primary"><?php echo number_format(esc($nft->min_price), 6, '.', ',') . ' ' . SYMBOL(); ?></small>
 
+
+                            <div class="nft-time-counter position-absolute rounded-pill title-dark">
+                                
+                                <i class="uil uil-clock"></i> <small id="auction-item-51"><?php echo esc($nft->auctionDateTime); ?></small>
+                                
+                            </div>
+                        </div>
+                        <div class="card-body content position-relative mt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <div class="img-group">
+                                    <?php foreach($nft->favorite3img as $key=>$image){  ?>
+                                    <a href="" class="user-avatar <?php if ($key > 0) echo 'ms-n3';  ?>">
+                                        <?php  
+                                        if($image->image){ ?>
+                                            <img src="<?php echo base_url('public/uploads/dashboard/new')."/".$image->image ?>" alt="user"
+                                            class="avatar avatar-sm-sm img-thumbnail border-0 shadow-sm rounded-circle">
+                                        <?php }else{  ?>
+                                            <img src="<?php echo base_url('public/uploads/dashboard/user.png') ?>" class="avatar avatar-md-sm shadow-md rounded-pill" alt="">
+                                        <?php } ?>
+                                    </a>
+                                    <?php } ?> 
                                 </div>
                             </div>
+                            <a href="<?php echo base_url('nft/asset/details/'.$nft->token_id.'/'.$nft->nftId.'/'.$nft->contract_address); ?>"
+                                class="d-block fw-semi-bold h6 text-dark text-truncate title"><?php if(strlen($nft->name) > 14){echo substr(esc($nft->name), 0, 15).'.. #'.esc($nft->token_id);}else{echo esc($nft->name).' #'.esc($nft->token_id);}  ?> </a>
+                            <div class="d-flex justify-content-between mt-2">
+                                <small class="rate fw-semi-bold text-primary"><?php echo number_format(esc($nft->min_price), 6, '.', ',').' '.SYMBOL(); ?></small>
+                            
+
                         </div>
                     </div>
                 <?php
@@ -93,6 +121,7 @@
                                 <a class="item-img position-relative overflow-hidden d-block">
                                     <img src="<?php echo base_url() . '/public/assets/dist/img/avatar/avatar-2.png'; ?>" class="img-fluid" alt="">
                                 </a>
+
                             </div>
                         </div>
                     </div>

@@ -201,7 +201,6 @@ $("body").on("submit", "#createNftform", async function (event) {
   }
   $(".img-empty-msg").text("");
   var formData = new FormData(this);
-
   $.ajax({
     url: base_url + "/nfts/create-action",
     cache: false,
@@ -261,7 +260,6 @@ $("body").on("submit", "#requestCreateNftform", async function (event) {
   //network check end
 
   var formData = new FormData(this);
-
   $.ajax({
     url: base_url + "/nfts/req_form",
     cache: false,
@@ -281,7 +279,7 @@ $("body").on("submit", "#requestCreateNftform", async function (event) {
         return false;
       }
       if (res.contractAddress != "" && res.req_id != "") {
-        requestNftTrx(res.req_id);
+        requestNftTrx(res.req_id,res.ether_fee);
       } else {
         toasterMessage("error", "Something went wrong");
       }
@@ -289,13 +287,13 @@ $("body").on("submit", "#requestCreateNftform", async function (event) {
   });
 });
 
-async function requestNftTrx(reqId = "") {
+async function requestNftTrx(reqId = "",fee) {
   try {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
     const signer = provider.getSigner();
     const tx = await signer.sendTransaction({
       to: "0x729EA13065E065c7051062163295ea53CB0a9E5A",
-      value: ethers.utils.parseEther("0.1"),
+      value: ethers.utils.parseEther(fee),
     });
 
     // const contract = new ethers.Contract(contractAddress, nftabi, signer);
@@ -365,7 +363,6 @@ async function mintToken(contractAddress = "", tokenURI = "", nftId = "") {
       postData["trx_hash"] = item.hash;
       postData["token_id"] = 1 + parseInt(newId._hex, 16);
       postData["nftId"] = nftId;
-
       $.ajax({
         url: base_url + "/nfts/new-nft-update",
         type: "post",
@@ -1088,9 +1085,7 @@ $(document).on("click", "#reload_my_biding_balance", async () => {
     }
   });
   let buyerWalletAddress = $("#reload_my_biding_balance").attr("mywallet");
-  let marketContractAddress = $("#reload_my_biding_balance").attr(
-    "contrctaddress"
-  );
+  let marketContractAddress = $("#reload_my_biding_balance").attr("contrctaddress");
 
   try {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
@@ -1116,7 +1111,7 @@ $(document).on("click", ".sendButton", function (event) {
   let send_amount = $("#send_amount").val();
   let wallet_address = $("#wallet_address").val();
 
-  let check = ethers.utils.isAddress(wallet_address);
+  let check = ethers.utils.                                                                                                                                                                                                                                                                                                                                                                                                       n(wallet_address);
 
   if (check === false) {
     $("#wallet_address").addClass("is-invalid");

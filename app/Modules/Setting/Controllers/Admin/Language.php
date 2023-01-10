@@ -321,11 +321,8 @@ class Language extends BaseController {
         if (sizeof($lang) > 0) {
 
             if ($this->db->tableExists($this->table)) {
-
                 if ($this->db->fieldExists($this->phrase, $this->table)) {
-
                     foreach ($lang as $value) {
-
                         $value = trim(preg_replace("/\s*(?:[^\w\s])+/", "", $value));
                         $value = str_replace(' ', '_', $value);
 

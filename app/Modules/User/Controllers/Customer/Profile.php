@@ -46,17 +46,16 @@ class Profile extends BaseController {
                         $bannerImage = $this->imagelibrary->Image($bannerImg,$savepath1,$old_image1,1400,400);
                     }    
                 } 
- 
+
             $userdata = array( 
                 'f_name'      => $this->request->getVar('first_name',FILTER_SANITIZE_STRING),
                 'l_name'      => $this->request->getVar('last_name',FILTER_SANITIZE_STRING), 
                 'bio'      => $this->request->getVar('bio',FILTER_SANITIZE_STRING), 
                 'portfolio_url'      => $this->request->getVar('portfolio_url',FILTER_SANITIZE_STRING), 
                 'email'      => $this->request->getVar('email',FILTER_SANITIZE_STRING), 
+                 'refernce_id'=>$this->request->getVar('refernce_id',FILTER_SANITIZE_STRING),
+                 'refernce_by'=>$this->request->getVar('refernce_by',FILTER_SANITIZE_STRING),
             );
-             
-            
-             
             if(isset($bannerImage)){
                 $userdata['banner_image'] = $bannerImage;
             }
@@ -64,17 +63,21 @@ class Profile extends BaseController {
             if($proImage){
                 $userdata['image'] = explode("/", $proImage)[5];
             }
- 
+           
             $update = $this->common_model->update('user', $where, $userdata);
+            if($this->request->getVar('refernce_by') =='' && $this->request->getVar('refernce_by',FILTER_SANITIZE_STRING) !=$this->request->getVar('refernce_id',FILTER_SANITIZE_STRING)){
             if($update){
                 $this->session->setFlashdata('message',display('update_successfully'));
                 return redirect()->to(base_url('user/settings'));
             }else{
                 $this->session->setFlashdata('exception',display('please_try_again'));
                 return redirect()->to(base_url('user/settings'));
-            }
-            
-
+            }   
+        }
+        else{
+            $this->session->setFlashdata('exception',display('please_try_again'));
+            return redirect()->to(base_url('user/settings'));
+        } 
         }
 
         $error=$this->validation->listErrors();

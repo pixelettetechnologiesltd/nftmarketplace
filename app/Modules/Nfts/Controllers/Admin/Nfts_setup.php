@@ -501,7 +501,10 @@ class Nfts_setup extends BaseController
         }
     }
     public function request_form()
+    
+
     {
+      
         $data['content'] = $this->BASE_VIEW . '\nft-setup\nft_request_form';
         return $this->template->admin_layout($data);
     }
@@ -524,7 +527,8 @@ class Nfts_setup extends BaseController
             'updatedAt' => date('Y-m-d H:i:s'),
             'nft_status' => 0
         ];
-        $builder = $this->db->table('req_form');
+        
+        
         $ins = $builder->insert($data);
         if ($ins) {
             $this->session->setFlashdata('message', display('save_successfully'));
@@ -536,16 +540,7 @@ class Nfts_setup extends BaseController
     }
     public function approval($id)
     {
-        // $email = \Config\Services::email();
-        // $email->setFrom('aliarslan6001@gmail.com', 'Your Name');
-        // $email->setTo('arslandev786@gmail.com');
-        // if($email->send()){
-        //     echo "email sent";
-        // }
-        // else{
-        //     echo "email not sent";
-        // }
-        // return;
+       
         $update = $this->common_model->update('req_form', ['id' => $id], ['nft_status' => 1]);
         if ($update) {
             $email = $this->db->table('req_form')->select('email')->where(['id' => $id])->get()->getResult();

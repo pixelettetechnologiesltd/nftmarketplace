@@ -10,9 +10,6 @@ class Home extends BaseController
         // write your __construct
 
     }
-
-
-
     public function index()
     {
 
@@ -264,7 +261,11 @@ class Home extends BaseController
         $data['frontendAssets'] = base_url('public/assets/website');
         $data['content']    = view('themes/' . $this->templte_name->name . '/contact', $data);
         return $this->template->website_layout($data);
+
+     
     }
+    }
+
 
     public function about()
     {

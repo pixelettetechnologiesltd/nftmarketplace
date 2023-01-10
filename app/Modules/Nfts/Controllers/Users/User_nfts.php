@@ -237,8 +237,6 @@ class User_nfts extends BaseController
       if (empty($slug)) {
         $slug = $this->_clean($this->request->getVar('col_name', FILTER_SANITIZE_STRING));
       }
-
-
       $data = [
         'title' => $this->request->getVar('col_name', FILTER_SANITIZE_STRING),
         'slug' => strtolower($slug),
@@ -448,14 +446,14 @@ class User_nfts extends BaseController
     // $ins = $builder->insert($data);
 
     $returnId = $this->common_model->save_return_id('req_form', $data);
-
+    $ether = $this->common_model->where_row('fees_tbl', array('status' => 1));
     $contractInfo = $this->common_model->where_row('contract_setup', array('status' => 1));
 
     $retunData = array(
       'contractAddress' => $contractInfo->contract_address,
       'req_id' => $returnId,
+      'ether_fee'=>$ether->ether_fees
     );
-
     echo json_encode($retunData);
 
     //  if($ins){

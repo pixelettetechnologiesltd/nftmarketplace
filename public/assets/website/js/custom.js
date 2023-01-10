@@ -15,17 +15,11 @@ function demo_version() {
 
 $(document).ready(function () {
     "use strict"; // Start of use strict
-     
-
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
-
     today = dd + '/' + mm  + '/' + yyyy; 
-
-
-
     $(".navbar").each(function () {
         $(".search", this).on("click", function (e) {
             e.preventDefault();
@@ -543,8 +537,7 @@ $(document).ready(function () {
                     }else{
                         $(".collection-name-check").addClass(res.class); 
                         $(".collection-name-check").html('<i class="fa fa-xmark"></i> '+res.msg);  
-                    }
-                     
+                    } 
                 }
             });
         }else{

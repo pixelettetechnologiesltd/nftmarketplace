@@ -3,7 +3,10 @@
         <div class="row justify-content-center">
             <div class="col-xl-6"> 
                 <div class="border rounded-5 p-3 p-sm-5">
-                <?php if(isset($message)){ ?>
+                <label for="refer_id" class="form-label fw-semi-bold text-black mb-1"><?php echo display('Reference ID'); ?></label><span class="text-danger"> *</span>
+                <?php 
+                 echo   esc('UID000'.$profile->uid);
+                if(isset($message)){ ?>
                 <div class="alert alert-success alert-dismissible">
                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     <strong><?php echo display('Success'); ?>!</strong> <?php echo $message; ?>
@@ -105,8 +108,9 @@
                                         <input type="email" class="form-control" name="email" id="email" value="<?php echo esc($profile->email) ?>" placeholder="name@example.com">
                                     </div>
                                     <div class="mb-4">
-                                        <label for="refer_id" class="form-label fw-semi-bold text-black mb-1"><?php echo display('Reference ID'); ?></label><span class="text-danger"> *</span>
-                                        <input type="text" class="form-control" name="refernce_id" id="refernce_id" value="<?php echo esc('UID000'.$profile->uid) ?>" placeholder="Reference ID">
+                                        <label for="refer_id" class="form-label fw-semi-bold text-black mb-1"><?php echo display('Reference By'); ?></label><span class="text-danger"> *</span>
+                                        <input type="hidden" class="form-control" name="refernce_id" id="refernce_id" value="<?php echo esc('UID000'.$profile->uid) ?>" placeholder="Reference ID">
+                                        <input type="text" class="form-control" name="refernce_by" id="refernce_by"  placeholder="Reference ID">
                                     </div>
                                     <div class="mb-4">
                                         <label for="wallet-address" class="form-label fw-semi-bold text-black mb-1"><?php echo display('Wallet_Address'); ?></label>
