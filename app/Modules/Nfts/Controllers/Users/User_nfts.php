@@ -428,6 +428,7 @@ class User_nfts extends BaseController
 
   public function req_form()
   {
+    $walletAddress = $this->session->get('walletaddress');
     $data = [
       'name' =>  $this->request->getVar('name', FILTER_SANITIZE_STRING),
       'vat_number' => $this->request->getVar('vat_number', FILTER_SANITIZE_STRING),
@@ -437,7 +438,8 @@ class User_nfts extends BaseController
       'reason_to_create_project' => $this->request->getVar('reason_to_create_project', FILTER_SANITIZE_STRING),
       'createdAt' => date('Y-m-d H:i:s'),
       'updatedAt' => date('Y-m-d H:i:s'),
-      'nft_status' => 0
+      'nft_status' => 0,
+      'wallet_address' => $walletAddress,
     ];
 
     // $builder = $this->db->table('req_form');

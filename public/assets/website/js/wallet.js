@@ -132,6 +132,9 @@ function loginAction(chainId = "", walletAddress = "") {
       if (res.status == "success") {
         alert(res.msg);
         window.location.href = base_url;
+      } else if (res.status == "profile_not_fill") {
+        alert(res.msg);
+        window.location.href = base_url + "/user/settings";
       } else {
         alert(res.msg);
         window.location.href = base_url;
