@@ -537,8 +537,7 @@ $(document).ready(function () {
                     }else{
                         $(".collection-name-check").addClass(res.class); 
                         $(".collection-name-check").html('<i class="fa fa-xmark"></i> '+res.msg);  
-                    }
-                     
+                    } 
                 }
             });
         }else{

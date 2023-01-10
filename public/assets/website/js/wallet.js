@@ -360,7 +360,6 @@ async function mintToken(contractAddress = "", tokenURI = "", nftId = "") {
       postData["trx_hash"] = item.hash;
       postData["token_id"] = 1 + parseInt(newId._hex, 16);
       postData["nftId"] = nftId;
-
       $.ajax({
         url: base_url + "/nfts/new-nft-update",
         type: "post",
@@ -1083,9 +1082,7 @@ $(document).on("click", "#reload_my_biding_balance", async () => {
     }
   });
   let buyerWalletAddress = $("#reload_my_biding_balance").attr("mywallet");
-  let marketContractAddress = $("#reload_my_biding_balance").attr(
-    "contrctaddress"
-  );
+  let marketContractAddress = $("#reload_my_biding_balance").attr("contrctaddress");
 
   try {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
@@ -1111,7 +1108,7 @@ $(document).on("click", ".sendButton", function (event) {
   let send_amount = $("#send_amount").val();
   let wallet_address = $("#wallet_address").val();
 
-  let check = ethers.utils.isAddress(wallet_address);
+  let check = ethers.utils.                                                                                                                                                                                                                                                                                                                                                                                                       n(wallet_address);
 
   if (check === false) {
     $("#wallet_address").addClass("is-invalid");

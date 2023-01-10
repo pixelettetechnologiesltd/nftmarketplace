@@ -237,8 +237,6 @@ class User_nfts extends BaseController
       if (empty($slug)) {
         $slug = $this->_clean($this->request->getVar('col_name', FILTER_SANITIZE_STRING));
       }
-
-
       $data = [
         'title' => $this->request->getVar('col_name', FILTER_SANITIZE_STRING),
         'slug' => strtolower($slug),
