@@ -463,6 +463,7 @@ class Home extends BaseController
         $chainId       = $this->request->getVar('chainId', FILTER_SANITIZE_STRING);
         $this->session->set('walletaddress', $walletAddress);
         $nft_status  = $this->db->table('req_form')->select('nft_status')->where(['wallet_address' => $walletAddress])->get()->getResult();
+
         $this->session->set('nftStatus', $nft_status);
 
 
@@ -1253,9 +1254,9 @@ class Home extends BaseController
     public function request_NFT()
     {
         $data['content']  = view('themes/' . $this->templte_name->name . '/nft_request_form');
-        print_r($this->session->get('nft_status'));
         return $this->template->website_layout($data);
     }
+
     public function req_form()
     {
         $walletAddress = $this->session->get('walletaddress');
@@ -1290,6 +1291,7 @@ class Home extends BaseController
             return  redirect()->to(base_url('nfts/Request'));
         }
     }
+
     public function hire_designer()
     {
         $data['content']  = view('themes/' . $this->templte_name->name . '/hire_designer');

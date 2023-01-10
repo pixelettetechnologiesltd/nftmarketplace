@@ -91,6 +91,7 @@
                             <a href="<?php echo base_url('nfts/Request'); ?>" class="nav-link"><?php echo display('Requst For NFT'); ?></a>
                             <?php if ($int_var === 1) { ?>
                                 <a href="<?php echo base_url('nfts/hire_designer'); ?>" class="nav-link"><?php echo display('Hire Designer'); ?></a>
+                                <a class="nav-link" href="<?php echo base_url('nfts/create'); ?>"><?php echo display('Mint NFT'); ?></a>
                             <?php } else {
                                 null;
                             } ?>

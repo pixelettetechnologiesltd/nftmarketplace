@@ -153,7 +153,7 @@
 
                                             <a href='<?php echo base_url("user/assets/transfer/{$nftInfo->nftId}/{$nftInfo->token_id}/{$nftInfo->contract_address}"); ?>' class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn"><i class="mdi mdi-gavel fs-5 me-2"></i><?php echo display('Transfer'); ?></a>
 
-                                            <a href='<?php echo base_url("user/assets/transfer/{$nftInfo->nftId}/{$nftInfo->token_id}/{$nftInfo->contract_address}"); ?>' class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn"><i class="mdi mdi-gavel fs-5 me-2"></i><?php echo display('Stake'); ?></a>
+                                            <a href='<?php echo base_url("user/assets/transfer/{$nftInfo->nftId}/{$nftInfo->token_id}/{$nftInfo->contract_address}"); ?>' class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn mt-2"><i class="mdi mdi-gavel fs-5 me-2"></i><?php echo display('Stake NFT'); ?></a>
 
 
                                         <?php
