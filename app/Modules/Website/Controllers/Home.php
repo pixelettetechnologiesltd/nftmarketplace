@@ -8,10 +8,11 @@ class Home extends BaseController
     function __construct()
     {
         // write your __construct
+      
 
     }
     public function index()
-    {
+    { 
 
         $data['title']        = display("Home");
         @$cat_id              = $this->web_model->catidBySlug('home');
@@ -59,8 +60,86 @@ class Home extends BaseController
         $data['l_name']     = (isset($this->isUser) ? $this->common_model->where_row('user', ['user_id' => $this->userId])->l_name  : '');
         return $this->template->website_layout($data);
     }
+   public function nft_stack(){
 
+    $current_time = time();
+    
+    //Adding 30 days
+    $new_time = strtotime("+30 days", $current_time);
+    $new_date = date("Y-m-d H:i:s", $new_time);
+    $stack_data = array(
+        'token_id'    => $this->uri->getSegment(3),
+        'nft_id'       => $this->uri->getSegment(4),
+        'owner_wallet'    => $this->uri->getSegment(5),
+        'stake_timestamp'   => date('Y-m-d H:i:s'),
+        'unstake_timestamp' => $new_date,
+         'status'=>'stake'
+    );
+    $ins=$this->common_model->insert('staking', $stack_data);
+    if($ins){
+        $currentTime = date('Y-m-d H:i:s');
+        $curretSec = strtotime($currentTime);
+        $startSec = strtotime($current_time);
+        $endSec = strtotime($new_date); 
+        $sec = abs($endSec - $curretSec);
+        $day = floor($sec/24/60/60);
+        $houreLeft = floor($sec - $day*86400);
+        $houre = floor($houreLeft/3600);
+        $minutesLeft = floor(($houreLeft) - ($houre*3600));
+        $minutes     = floor($minutesLeft/60);
+        $remainingSeconds = $sec % 60;
+        $day.' : '.$houre.' : '.$minutes.' : '.$remainingSeconds;
+        $id = $this->db->insertId();
+        $reward_data=array(
+          'stack_id'=> $id,
+          'daily_reward'=> 0.1, 
+          'claimed_reward'=> 1,
+        );
+        $this->common_model->insert('reward', $reward_data);
+        // $builder = $this->db->table('reward');
+        //  $nft_reward = $builder->select('*')->where('stack_id', $id)->get()->getRow();
+        // print_r($nft_reward);
+        // return $day.' : '.$houre.' : '.$minutes.' : '.$remainingSeconds;
+        return redirect();
+    }
+     
 
+   }
+  //nft stack
+  public function stackNFT(){
+    $data['title']        = display("NFT Stack");
+    @$cat_id              = $this->web_model->catidBySlug('home');
+    $data['article']      = $this->web_model->article($cat_id->cat_id);
+
+    #-------------------------------#
+    #pagination starts
+    #-------------------------------#
+     $limit                  = 15;
+     $page                   = ($this->uri->getSegment(1)) ? $this->uri->getSegment(1) : 0;
+     $page_number            = (!empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1);
+
+     $data['nfts']           = $result = $this->web_model->getStackNFT($limit, $page_number);
+    
+     $total                  = $this->common_model->countRow('nfts_store', ['nfts_store.status' => 3]);
+    
+     $data['topCollections'] = $this->web_model->topCollections();
+
+     $data['topSellers']     = $this->web_model->topSellers();
+
+    $data['pager']   = $this->pager->makeLinks($page_number, $limit, $total);
+    #------------------------
+    # pagination ends
+    #------------------------ 
+    $data['isUser']            = $this->isUser;
+    $data['settings']           = $this->common_model->where_row('setting');
+    $data['frontendAssets']     = base_url('public/assets/website');
+    $data['total_data']         = $total;
+    $data['page_limit']         = $limit;
+    $data['content']            = view('themes/' . $this->templte_name->name . '/nft_stack', $data);
+   //dummy nft_id
+
+     return $this->template->website_layout($data);
+  }
     public function nft_details($tokenid = null, $nftTableId = null, $contractAdd = null)
     {
 
@@ -264,7 +343,7 @@ class Home extends BaseController
 
      
     }
-    }
+
 
 
     public function about()

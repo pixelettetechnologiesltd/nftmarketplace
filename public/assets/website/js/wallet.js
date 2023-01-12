@@ -1077,7 +1077,11 @@ async function connectStatus(status) {
     return status(true);
   }
 }
-
+function storeData(){
+  
+  alert();
+}
+$(document).on("click","")
 $(document).on("click", "#reload_my_biding_balance", async () => {
   connectStatus((status) => {
     if (status == false) {

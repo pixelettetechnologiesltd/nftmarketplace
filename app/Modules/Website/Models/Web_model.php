@@ -221,8 +221,6 @@ class Web_model {
 	  
 		$networkCheck = ($this->networkId != null) ? "AND `dbt_nfts_store`.`blockchain_id` = {$this->networkId}" : '';
 		$result = $this->db->query("SELECT `dbt_nfts_store`.*, `dbt_nfts_store`.`id` as `nftId`, `dbt_nfts_store`.`status` as `nft_status`, `dbt_nft_collection`.`title` as `collection_title`, `dbt_nft_listing`.*, `dbt_nft_listing`.`id` as `listing_id` FROM `dbt_nfts_store` LEFT JOIN `dbt_nft_collection` ON `dbt_nft_collection`.`id`=`dbt_nfts_store`.`collection_id` LEFT JOIN `dbt_nft_listing` ON `dbt_nft_listing`.`nft_store_id`=`dbt_nfts_store`.`id` WHERE `dbt_nfts_store`.`status` = 3 AND `dbt_nft_listing`.`status` = 0 {$networkCheck} ORDER BY `dbt_nft_listing`.`created_at` DESC LIMIT 15")->getResult();
-
-
 		foreach ($result as $key => $value) {
 
 			$value->favoriteVal = $this->countRow('favorite_items', ['nft_id'=>$value->nftId]);
@@ -234,9 +232,20 @@ class Web_model {
   
 		return $result;
 	}
+	 public function getStackNFT($limit,$page_number){
+		$networkCheck = ($this->networkId != null) ? "AND `dbt_nfts_store`.`blockchain_id` = {$this->networkId}" : '';
+		$result = $this->db->query("SELECT `dbt_nfts_store`.*, `dbt_nfts_store`.`id` as `nftId`, `dbt_nfts_store`.`status` as `nft_status`, `dbt_nft_collection`.`title` as `collection_title`, `dbt_nft_listing`.*, `dbt_nft_listing`.`id` as `listing_id` FROM `dbt_nfts_store` LEFT JOIN `dbt_nft_collection` ON `dbt_nft_collection`.`id`=`dbt_nfts_store`.`collection_id` LEFT JOIN `dbt_nft_listing` ON `dbt_nft_listing`.`nft_store_id`=`dbt_nfts_store`.`id` WHERE `dbt_nfts_store`.`status` = 3 AND `dbt_nft_listing`.`status` = 0 {$networkCheck} ORDER BY `dbt_nft_listing`.`created_at` DESC LIMIT 15")->getResult();
+		foreach ($result as $key => $value) {
 
+			$value->favoriteVal = $this->countRow('favorite_items', ['nft_id'=>$value->nftId]);
+			$value->auctionDateTime = $this->calculateAuctionDateTimeStack($value->start_date, $value->end_date);
+			$value->favorite3img = $this->getLastThreeFavouriteUser($value->nftId); 
+			$value->favoriteActive = $this->countRow('favorite_items', ['nft_id'=> $value->nftId, 'user_id'=>$this->session->get('user_id')]);
 
-	 
+		}
+  
+		return $result;
+	 }
 
 	public function getNfts($arr = array(), int $limit)
 	{
@@ -327,6 +336,32 @@ class Web_model {
 	        $minutes     = floor($minutesLeft/60);
 	        $remainingSeconds = $sec % 60;
 
+	        return $day.' : '.$houre.' : '.$minutes.' : '.$remainingSeconds;
+	    }else{
+	    	return '00 : 00 : 00 : 00';
+	    }
+        
+	}
+	public function calculateAuctionDateTimeStack($startDate, $endDate)
+	{ 
+
+		if($startDate != null && $endDate != null){
+			$current_time = time();
+    
+       //Adding 30 days
+        $new_time = strtotime("+30 days", $current_time);
+        $new_date = date("Y-m-d H:i:s", $new_time);
+	      $currentTime = date('Y-m-d H:i:s');
+        $curretSec = strtotime($currentTime);
+        $startSec = strtotime($current_time);
+        $endSec = strtotime($new_date); 
+        $sec = abs($endSec - $curretSec);
+        $day = floor($sec/24/60/60);
+        $houreLeft = floor($sec - $day*86400);
+        $houre = floor($houreLeft/3600);
+        $minutesLeft = floor(($houreLeft) - ($houre*3600));
+        $minutes     = floor($minutesLeft/60);
+        $remainingSeconds = $sec % 60;
 	        return $day.' : '.$houre.' : '.$minutes.' : '.$remainingSeconds;
 	    }else{
 	    	return '00 : 00 : 00 : 00';

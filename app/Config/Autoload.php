@@ -16,6 +16,8 @@ use CodeIgniter\Config\AutoloadConfig;
  */
 class Autoload extends AutoloadConfig
 {    
+  
+
 
 
 	/**
@@ -72,4 +74,5 @@ class Autoload extends AutoloadConfig
         'Permission'=> APPPATH .'Libraries/Permission.php',
         'UploadImage'=> APPPATH .'Libraries/UploadImage.php'
     ];
+	
 }

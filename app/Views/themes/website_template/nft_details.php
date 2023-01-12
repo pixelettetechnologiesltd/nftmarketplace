@@ -122,10 +122,9 @@
                                         ?>
                                                     <span id="loggedinWallet" wallet="<?php echo $loggedinWallet; ?>"></span>
                                                     <a class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn buynow-btn" min_price="<?php echo (!empty($nftInfo->min_price)) ? $nftInfo->min_price : 0;  ?>" data-bs-toggle="modal" data-bs-target="#buyNowPopup" buyurl="<?php echo base_url("user/asset/buy/{$nftInfo->token_id}/{$nftInfo->nftId}/{$nftInfo->contract_address}"); ?>"><i class="mdi mdi-gavel fs-5 me-2"></i><?php echo display('Buy_Now'); ?></a>
-
-
-
-                                                <?php
+                                                    <form action='<?php echo base_url("user/nft_stack/{$nftInfo->nftId}/{$nftInfo->token_id}/{$nftInfo->contract_address}") ?>' method="post">
+                                                    <input type="submit" value="NFT Stack"  class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn mt-2"><i class="mdi mdi-gavel fs-5 me-2"></i>
+                                                </form>                                                <?php
                                                 } else {
                                                 ?>
                                                     <a href="javascript:;" class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-gavel fs-5 me-2"></i><?php echo display('Buy_Now'); ?></a>
@@ -144,6 +143,7 @@
                                                 <?php   } else { ?>
 
                                                     <a href="javascript:;" class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-gavel fs-5 me-2"></i><?php echo display('Buy_Now'); ?></a>
+                                                    <a href='<?php echo base_url("user/assets/transfer/{$nftInfo->nftId}/{$nftInfo->token_id}/{$nftInfo->contract_address}"); ?>' class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn mt-2"><i class="mdi mdi-gavel fs-5 me-2"></i><?php echo display('Stake NFT'); ?></a>
 
                                             <?php   }
                                             }

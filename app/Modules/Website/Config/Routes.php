@@ -10,7 +10,7 @@ $routes->group('/', ['namespace' => 'App\Modules\Website\Controllers'], function
     /*** Route for Website ***/
         $subroutes->add('', 'Home::index');
         $subroutes->add('home', 'Home::index');
-        
+       
         $subroutes->add('signup', 'Home::register');
         $subroutes->add('user/signin', 'Home::login');
         $subroutes->add('home/forgotPassword', 'Home::forgotPassword');
@@ -39,6 +39,8 @@ $routes->group('/', ['namespace' => 'App\Modules\Website\Controllers'], function
         $subroutes->add('nft/today_auction_close', 'Home::todayBidAcceptation/$1'); 
         $subroutes->add('user/checkemail/(:any)', 'Home::checkEmail/$1'); 
         $subroutes->add('user/check_username/(:any)', 'Home::checkUsername/$1'); 
+        $subroutes->add('user/stack-nft', 'Home::stackNFT');
+        $subroutes->add('user/nft_stack/(:any)', 'Home::nft_stack/$1');
         $subroutes->add('favourite_items/(:any)', 'Home::favouriteItems/$1'); 
         $subroutes->add('collection/(:any)', 'Home::collectionWiseNfts/$1'); 
         
