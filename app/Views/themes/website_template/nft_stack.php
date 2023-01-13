@@ -79,14 +79,13 @@
                                     <small class="rate fw-semi-bold text-primary"><?php echo number_format(esc($nft->min_price), 6, '.', ',') . ' ' . SYMBOL(); ?></small>
                                    
                                 </div>
-                                <a class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn buynow-btn" style="padding:8px 40px"><i class="mdi mdi-gavel fs-5 me-2"></i>Unstake</a>
+                                <!-- <a class="btn btn-l btn-pills btn-outline-primary me-2 bid-btn buynow-btn" style="padding:8px 40px"><i class="mdi mdi-gavel fs-5 me-2"></i>Unstake</a> -->
                             </div>
                         </div>
                     </div>
                 <?php
                 }
             } else {
-
                 for ($i = 0; $i < 10; $i++) {
                 ?>
 
@@ -250,6 +249,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
 
             <?php

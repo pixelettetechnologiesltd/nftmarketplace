@@ -26,6 +26,7 @@ class Home extends BaseController
         $page_number            = (!empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1);
 
         $data['nfts']           = $result = $this->web_model->getAllNfts($limit, $page_number);
+     
         $total                  = $this->common_model->countRow('nfts_store', ['nfts_store.status' => 3]);
 
         $data['topCollections'] = $this->web_model->topCollections();
@@ -110,6 +111,7 @@ class Home extends BaseController
      $page_number            = (!empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1);
 
      $data['nfts']           = $result = $this->web_model->getStackNFT($limit, $page_number);
+     
     
      $total                  = $this->common_model->countRow('nfts_store', ['nfts_store.status' => 3]);
     

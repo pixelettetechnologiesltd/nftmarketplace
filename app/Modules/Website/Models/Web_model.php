@@ -328,6 +328,7 @@ class Web_model {
 	{ 
 
 		if($startDate != null && $endDate != null){
+			
 			$currentTime = date('Y-m-d H:i:s');
 			$curretSec = strtotime($currentTime);
 			$startSec = strtotime($startDate);
@@ -352,8 +353,8 @@ class Web_model {
 		if($startDate != null && $endDate != null){
 			$currentTime = date('Y-m-d H:i:s');
 			$curretSec = strtotime($currentTime);
-			//$startSec = strtotime($curretSec);
-		    $endSec=strtotime("+30 days",$curretSec);
+			$startSec = strtotime($startDate);
+			$endSec = strtotime($endDate); 
 	        $sec = abs($endSec - $curretSec);
 	        $day = floor($sec/24/60/60);
 	        $houreLeft = floor($sec - $day*86400);
