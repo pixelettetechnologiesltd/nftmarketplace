@@ -68,9 +68,9 @@
                                 </div>
 
                          
-  <a href="#">Daily Reward <span class="badge" style="color:blue !important"></span></a><br>
-  <a href="#">Claim Reward <span class="badge" style="color:blue !important"></span></a><br>
-  <a href="#">Total Reward <span class="badge" style="color:blue !important"></span></a><br>
+  <a href="#">Daily Reward <span class="badge" style="color:blue !important"><?php echo esc($nft->daily_reward)."USDT"; ?></span></a><br>
+  <a href="#">Claim Reward <span class="badge" style="color:blue !important"><?php echo esc($nft->claimed_reward)."USDT"; ?></span></a><br>
+  <a href="#">Total Reward <span class="badge" style="color:blue !important"><?php echo esc($nft->daily_reward+$nft->claimed_reward)."USDT";  ?></span></a><br>
                                 <a href="<?php echo base_url('nft/asset/details/' . $nft->token_id . '/' . $nft->nftId . '/' . $nft->contract_address); ?>" class="d-block fw-semi-bold h6 text-dark text-truncate title"><?php if (strlen($nft->name) > 14) {
                                                                                                                                                                                                                                 echo substr(esc($nft->name), 0, 15) . '.. #' . esc($nft->token_id);
                                                                                                                                                                                                                             } else {

@@ -75,20 +75,10 @@ class Home extends BaseController
         'unstake_timestamp' => $new_date,
          'status'=>'stake'
     );
+    $ownerWallet = $this->db->table('staking')->select('owner_wallet')->where(['nft_id' => $this->uri->getSegment(4)])->get()->getResult();
+    if(empty($ownerWallet)){
     $ins=$this->common_model->insert('staking', $stack_data);
     if($ins){
-        $currentTime = date('Y-m-d H:i:s');
-        $curretSec = strtotime($currentTime);
-        $startSec = strtotime($current_time);
-        $endSec = strtotime($new_date); 
-        $sec = abs($endSec - $curretSec);
-        $day = floor($sec/24/60/60);
-        $houreLeft = floor($sec - $day*86400);
-        $houre = floor($houreLeft/3600);
-        $minutesLeft = floor(($houreLeft) - ($houre*3600));
-        $minutes     = floor($minutesLeft/60);
-        $remainingSeconds = $sec % 60;
-        $day.' : '.$houre.' : '.$minutes.' : '.$remainingSeconds;
         $id = $this->db->insertId();
         $reward_data=array(
           'stack_id'=> $id,
@@ -96,18 +86,19 @@ class Home extends BaseController
           'claimed_reward'=> 1,
         );
         $this->common_model->insert('reward', $reward_data);
-        // $builder = $this->db->table('reward');
-        //  $nft_reward = $builder->select('*')->where('stack_id', $id)->get()->getRow();
-        // print_r($nft_reward);
-        // return $day.' : '.$houre.' : '.$minutes.' : '.$remainingSeconds;
-        return redirect();
+        $this->session->setFlashdata('message',display('save_successfully'));  
+        return redirect()->to(base_url('nft/asset/details/'.$this->uri->getSegment(3).'/'.$this->uri->getSegment(4).'/'.$this->uri->getSegment(5))); 
     }
-     
-
+    }
+    else{
+        $this->session->setFlashdata('exception',display('This NFT Already stake'));
+        return redirect()->to(base_url('nft/asset/details/'.$this->uri->getSegment(3).'/'.$this->uri->getSegment(4).'/'.$this->uri->getSegment(5))); 
+    }
    }
-  //nft stack
+  //nft stake
   public function stackNFT(){
-    $data['title']        = display("NFT Stack");
+    
+    $data['title']        = display("NFT Stake");
     @$cat_id              = $this->web_model->catidBySlug('home');
     $data['article']      = $this->web_model->article($cat_id->cat_id);
 
@@ -136,7 +127,7 @@ class Home extends BaseController
     $data['total_data']         = $total;
     $data['page_limit']         = $limit;
     $data['content']            = view('themes/' . $this->templte_name->name . '/nft_stack', $data);
-   //dummy nft_id
+
 
      return $this->template->website_layout($data);
   }
