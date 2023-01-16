@@ -1,6 +1,6 @@
 <section class="section-pd pb-0">
     <div class="container">
-        <h3 class="fw-bold mb-4"><?php echo display('Latest_NFTs'); ?></h3>
+        <h3 class="fw-bold mb-4"><?php echo display('Stake_NFTs'); ?></h3>
         <div class="row g-3 item-wrap">
           
             <?php
