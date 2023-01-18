@@ -53,7 +53,32 @@ $ADMINMENU['nft_Requrst_form'] = array(
     'segment'       => 2,
     'segment_text'  => 'nft_req_form'
 );
-
+$ADMINMENU['NFT_Stake'] = array(
+    'order'         => 6,
+    'parent'        => display('NFT Stake'),
+    'status'        => 1,
+    'link'          => 'NFT Stake',
+    'icon'          => '<i class="fa fa-cogs"></i>',
+    'submenu'       => array(
+                
+                '0' => array(
+                    'name'          => display('NFT Stake Form'),
+                    'icon'          => '<i class="fa fa-arrow-right"></i>',
+                    'link'          => 'nft/nft_stake',
+                    'segment'       => 3,
+                    'segment_text'  => 'nft_stake','add_network'
+                ),
+                '1' => array(
+                    'name'          => display('NFT Stake List'),
+                    'icon'          => '<i class="fa fa-arrow-right"></i>',
+                    'link'          => 'nft/nft_stake_list',
+                    'segment'       => 3,
+                    'segment_text'  => 'nft_stake_list','add_network'
+                ),      
+    ),
+    'segment'       => 2,
+    'segment_text'  => 'NFT_Stake'
+);
 $ADMINMENU['nfts'] = array(
     'order'         => 3,
     'parent'        => display('NFT\'s'),
@@ -61,7 +86,7 @@ $ADMINMENU['nfts'] = array(
     'link'          => 'nft-list',
     'icon'          => '<i class="fa fa-braille"></i>',
     'submenu'       => array( 
-                 
+    
                 '0' => array(
                     'name'          => display('NFT List'),
                     'icon'          => '<i class="fa fa-arrow-right"></i>',
@@ -117,9 +142,7 @@ $ADMINMENU['nfts'] = array(
                     'link'          => 'nft/add_collection',
                     'segment'       => 3,
                     'segment_text'  => 'add_collection'
-                ),  
-               
-                
+                ),    
     ),
     'segment'       => 2,
     'segment_text'  => 'nft_setup'

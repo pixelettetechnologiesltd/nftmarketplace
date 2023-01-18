@@ -211,10 +211,8 @@
                 <?php
                 }
             } else {
-
                 for ($i = 0; $i < 8; $i++) {
                 ?>
-
                     <div class="col-lg-3 col-md-4">
                         <div class="creators creator-primary d-flex align-items-center">
                             <span class="fw-bold text-dark"><?php echo esc($i + 1); ?>.</span>

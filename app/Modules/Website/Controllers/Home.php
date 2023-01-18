@@ -66,7 +66,9 @@ class Home extends BaseController
     $current_time = time();
     
     //Adding 30 days
-    $new_time = strtotime("+30 days", $current_time);
+    $days = $this->db->table('reward')->select('unstake_days')->get()->getResult();
+    $unstake_days=$days[0]->unstake_days;
+    $new_time = strtotime(+$unstake_days." days", $current_time);
     $new_date = date("Y-m-d H:i:s", $new_time);
     $stack_data = array(
         'token_id'    => $this->uri->getSegment(3),
@@ -81,12 +83,10 @@ class Home extends BaseController
     $ins=$this->common_model->insert('staking', $stack_data);
     if($ins){
         $id = $this->db->insertId();
-        $reward_data=array(
-          'stack_id'=> $id,
-          'daily_reward'=> 0.1, 
-          'claimed_reward'=> 1,
-        );
-        $this->common_model->insert('reward', $reward_data);
+        // $reward_data=array(
+        //   'stack_id'=> $id,
+        // );
+        //$this->common_model->insert('reward', $reward_data);
         $this->session->setFlashdata('message',display('save_successfully'));  
         return redirect()->to(base_url('nft/asset/details/'.$this->uri->getSegment(3).'/'.$this->uri->getSegment(4).'/'.$this->uri->getSegment(5))); 
     }
@@ -111,7 +111,6 @@ class Home extends BaseController
      $page_number            = (!empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1);
 
      $data['nfts']           = $result = $this->web_model->getStackNFT($limit, $page_number);
-     
     
      $total                  = $this->common_model->countRow('nfts_store', ['nfts_store.status' => 3]);
     
@@ -158,7 +157,6 @@ class Home extends BaseController
         } else if ($this->session->getFlashdata('message') != null) {
             $data['message'] = $this->session->getFlashdata('message');
         }
-
         $data['frontendAssets']     = base_url('public/assets/website');
         $data['userId']             = (isset($this->userId)) ? $this->userId : '';
         $data['isUser']             = (isset($this->isUser) ? $this->isUser : '');
@@ -170,8 +168,6 @@ class Home extends BaseController
 
         return $this->template->website_layout($data);
     }
-
-
     public function collectionWiseNfts(String $slug = null)
     {
 
@@ -183,7 +179,6 @@ class Home extends BaseController
         if (empty($collectionInfo)) {
             return redirect()->to(base_url());
         }
-
         $data['ownerInfo'] = $this->common_model->where_row('user', ['user_id' => $collectionInfo->user_id]);
 
         $data['totalItem'] = $this->web_model->countRow('nfts_store', ['collection_id' => $collectionInfo->id, 'status' => 3]);
