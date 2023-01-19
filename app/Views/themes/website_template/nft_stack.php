@@ -5,9 +5,7 @@
             <?php
             if (count($nfts) > 0) {
                 foreach ($nfts as $key => $nft) {  
-                    if(!empty($nft->nft_id)){
-                    
-                    
+                     
             ?>
                     <div class="col-sm-6 col-md-4 col-lg-3 myfvt">
                         <div class="card nft-items nft-primary rounded-7 border-0 overflow-hidden mb-1 p-4" startdate="<?php echo esc($nft->start_date); ?>" enddate="<?php echo esc($nft->end_date); ?>">
@@ -33,7 +31,16 @@
                                 <div class="nft-time-counter position-absolute rounded-pill title-dark">
                                   
                                     <i class="uil uil-clock"></i> <small id="auction-item-51"><?php echo esc($nft->auctionDateTime); ?></small>
-
+                                    <?php 
+                    $db         = db_connect();
+                    $time = '00 : 00 : 00 : 00';
+                    if($nft->auctionDateTime==$time){
+                    $db->query("UPDATE dbt_staking SET nft_status = 'unstake' WHERE token_id = " . $nft->token_id)->getRow();
+                }
+                    else{
+                    $db->query("UPDATE dbt_staking SET nft_status = 'stake' WHERE token_id = " . $nft->token_id)->getRow();
+                    }
+                    ?>
                                 </div>
                             </div>
                             
@@ -80,12 +87,7 @@
                             </div>
                         </div>
                     </div>
-                    <?php  } else { ?>
-                     <div class="alert alert-success alert-dismissible">
-                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                     <strong>You do not have any NFTs to stake</strong>  
-                 </div>  
-                 <?php   }?>
+                   
                 <?php
                 }
             } else {
