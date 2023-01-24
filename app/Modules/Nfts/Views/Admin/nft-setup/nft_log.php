@@ -1,6 +1,4 @@
-<?php $security = \Config\Services::security();
-helper('form');
-?>
+
 
 <div class="row">
     <div class="col-md-12 col-lg-12">
@@ -8,7 +6,7 @@ helper('form');
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <h6 class="fs-17 font-weight-600 mb-0"><?php echo (!empty($title)?esc($title):null) ?></h6>
+                        <h6 class="fs-17 font-weight-600 mb-0"></h6>
                     </div>
                     <div class="text-right">
                         <div class="actions">
@@ -18,28 +16,28 @@ helper('form');
                 </div>
             </div>          
             <div class="card-body">
-                
-                <?php echo form_open('#',array('id'=>'ajaxusertableform','name'=>'ajaxusertableform')); ?>
-
                 <div class="table-responsive">
                     <table id="ajaxtable" class="table  table-bordered table-striped table-hover">
                        <thead>
                             <tr> 
-                                <th><?php echo display('sl_no') ?></th> 
-                                <th><?php echo display('fullname') ?></th> 
-                                <th><?php echo display('email') ?></th> 
-                                <th width="320px"><?php echo display('Wallet_address') ?></th> 
-                                <th width="320px"><?php echo display('Nft_created') ?></th>
-                                <th><?php echo display('action') ?></th>
-                                
+                                <th><?php echo display('NFT Name') ?></th> 
+                                <th width="320px"><?php echo display('NFT ID') ?></th> 
+                                <th><?php echo display('NFT Owner') ?></th> 
                             </tr>
                         </thead>
                         <tbody>
+                        <?php  foreach($result as $results){ ?>
+                        <tr role="row" class="odd">
+                        <td><?php echo $results->name;  ?></td>
+                        <td><?php echo $results->nft_id;  ?></td>
+                        <td><?php echo $results->username;  ?></td>
+                          </tr>
+                      <?php   }   ?>
                         </tbody>
                       
                     </table> 
                 </div>
-                <?php echo form_close(); ?>
+             
             </div> 
         </div>
     </div>

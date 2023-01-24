@@ -221,8 +221,6 @@ class Web_model {
 	  
 		$networkCheck = ($this->networkId != null) ? "AND `dbt_nfts_store`.`blockchain_id` = {$this->networkId}" : '';
 		$result = $this->db->query("SELECT `dbt_nfts_store`.*, `dbt_nfts_store`.`id` as `nftId`, `dbt_nfts_store`.`status` as `nft_status`, `dbt_nft_collection`.`title` as `collection_title`, `dbt_nft_listing`.*, `dbt_nft_listing`.`id` as `listing_id` FROM `dbt_nfts_store` LEFT JOIN `dbt_nft_collection` ON `dbt_nft_collection`.`id`=`dbt_nfts_store`.`collection_id` LEFT JOIN `dbt_nft_listing` ON `dbt_nft_listing`.`nft_store_id`=`dbt_nfts_store`.`id` WHERE `dbt_nfts_store`.`status` = 3 AND `dbt_nft_listing`.`status` = 0 {$networkCheck} ORDER BY `dbt_nft_listing`.`created_at` DESC LIMIT 15")->getResult();
-
-
 		foreach ($result as $key => $value) {
 
 			$value->favoriteVal = $this->countRow('favorite_items', ['nft_id'=>$value->nftId]);
@@ -234,9 +232,41 @@ class Web_model {
   
 		return $result;
 	}
+	 public function getStackNFT($limit,$page_number){
+		$networkCheck = ($this->networkId != null) ? "AND `dbt_nfts_store`.`blockchain_id` = {$this->networkId}" : '';
+		$result = $this->db->query("SELECT `dbt_nfts_store`.*, `dbt_nfts_store`.`id` as `nftId`, `dbt_nfts_store`.`status` as `nft_status`, `dbt_nft_collection`.`title` as `collection_title`, `dbt_nft_listing`.*, `dbt_nft_listing`.`id` as `listing_id`, `dbt_staking`.* ,`dbt_reward`.* FROM `dbt_nfts_store` 
+		LEFT JOIN `dbt_nft_collection` ON `dbt_nft_collection`.`id`=`dbt_nfts_store`.`collection_id` 
+		LEFT JOIN `dbt_nft_listing` ON `dbt_nft_listing`.`nft_store_id`=`dbt_nfts_store`.`id` 
+		LEFT JOIN `dbt_staking` ON `dbt_staking`.`token_id` = `dbt_nfts_store`.`token_id`
+		LEFT JOIN `dbt_reward` ON `dbt_reward`.`stack_id` != `dbt_staking`.`id`
+		WHERE  `dbt_staking`.`nft_status`='stake'")->getResult();
+		foreach ($result as $key => $value) {
+			$value->favoriteVal = $this->countRow('favorite_items', ['nft_id'=>$value->nftId]);
+			$value->auctionDateTime = $this->calculateAuctionDateTimeStack($value->stake_timestamp, $value->unstake_timestamp);
+			$value->favorite3img = $this->getLastThreeFavouriteUser($value->nftId); 
+			$value->favoriteActive = $this->countRow('favorite_items', ['nft_id'=> $value->nftId, 'user_id'=>$this->session->get('user_id')]);
 
+		}
+  		return $result;
+	 }
+	 public function nftLog($limit,$page_number){
+		$networkCheck = ($this->networkId != null) ? "AND `dbt_nfts_store`.`blockchain_id` = {$this->networkId}" : '';
+		$result = $this->db->query("SELECT `dbt_nfts_store`.*, `dbt_nfts_store`.`id` as `nftId`, `dbt_nfts_store`.`status` as `nft_status`, `dbt_nft_collection`.`title` as `collection_title`, `dbt_nft_listing`.*, `dbt_nft_listing`.`id` as `listing_id`, `dbt_staking`.* ,`dbt_reward`.* FROM `dbt_nfts_store` 
+		LEFT JOIN `dbt_nft_collection` ON `dbt_nft_collection`.`id`=`dbt_nfts_store`.`collection_id` 
+		LEFT JOIN `dbt_nft_listing` ON `dbt_nft_listing`.`nft_store_id`=`dbt_nfts_store`.`id` 
+		LEFT JOIN `dbt_staking` ON `dbt_staking`.`token_id` = `dbt_nfts_store`.`token_id`
+		LEFT JOIN `dbt_reward` ON `dbt_reward`.`stack_id` != `dbt_staking`.`id`
+		WHERE `dbt_nfts_store`.`status` = 3 AND `dbt_nft_listing`.`status` = 0 {$networkCheck} ORDER BY `dbt_nft_listing`.`created_at` DESC LIMIT 15")->getResult();
+		foreach ($result as $key => $value) {
+			
+			$value->favoriteVal = $this->countRow('favorite_items', ['nft_id'=>$value->nftId]);
+			$value->auctionDateTime = $this->calculateAuctionDateTimeStack($value->stake_timestamp, $value->unstake_timestamp);
+			$value->favorite3img = $this->getLastThreeFavouriteUser($value->nftId); 
+			$value->favoriteActive = $this->countRow('favorite_items', ['nft_id'=> $value->nftId, 'user_id'=>$this->session->get('user_id')]);
 
-	 
+		}
+		return $result;
+	 }
 
 	public function getNfts($arr = array(), int $limit)
 	{
@@ -314,6 +344,7 @@ class Web_model {
 	{ 
 
 		if($startDate != null && $endDate != null){
+			
 			$currentTime = date('Y-m-d H:i:s');
 			$curretSec = strtotime($currentTime);
 			$startSec = strtotime($startDate);
@@ -333,6 +364,26 @@ class Web_model {
 	    }
         
 	}
+	public function calculateAuctionDateTimeStack($startDate, $endDate)
+	{ 
+		if($startDate != null && $endDate != null){
+			$currentTime = date('Y-m-d H:i:s');
+			$curretSec = strtotime($currentTime);
+			$startSec = strtotime($startDate);
+			$endSec = strtotime($endDate); 
+	        $sec = abs($endSec - $curretSec);
+	        $day = floor($sec/24/60/60);
+	        $houreLeft = floor($sec - $day*86400);
+	        $houre = floor($houreLeft/3600);
+	        $minutesLeft = floor(($houreLeft) - ($houre*3600));
+	        $minutes     = floor($minutesLeft/60);
+	        $remainingSeconds = $sec % 60;
+			
+	        return $day.' : '.$houre.' : '.$minutes.' : '.$remainingSeconds;
+	    }else{
+	    	return '00 : 00 : 00 : 00';
+	    }  
+	}
 
 	public function topCollections()
 	{ 
@@ -342,7 +393,6 @@ class Web_model {
 		foreach($collections as $value){ 
 			$value->images = $this->getCollectionWise3NftsImage($value->id);
 		}
-
 		return $collections;
 	}
 
@@ -368,8 +418,7 @@ class Web_model {
 	public function getNftDetails($tokenid, $nftTableId)
 	{
 		
-
-		$result = $this->db->query("SELECT `dbt_nfts_store`.*, `dbt_nfts_store`.`id` as `nftId`, `dbt_user`.`f_name`, `dbt_user`.`l_name`, `dbt_user`.`username`, `dbt_user`.`image` as `user_image`, `dbt_nft_category`.`cat_name`, `dbt_nft_category`.`slug` `cat_slug`, `dbt_nft_collection`.`title` as `collection_title`, `dbt_nft_collection`.`slug` as `collection_slug`, `dbt_nft_listing`.*, `dbt_nft_listing`.`id` as `listing_id` FROM `dbt_nfts_store` LEFT JOIN `dbt_user` ON `dbt_user`.`user_id`=`dbt_nfts_store`.`user_id` LEFT JOIN `dbt_nft_category` ON `dbt_nft_category`.`id`=`dbt_nfts_store`.`category_id` LEFT JOIN `dbt_nft_collection` ON `dbt_nft_collection`.`id`=`dbt_nfts_store`.`collection_id` LEFT JOIN `dbt_nft_listing` ON `dbt_nft_listing`.`nft_store_id`=`dbt_nfts_store`.`id` AND `dbt_nft_listing`.`status`=0 WHERE `dbt_nfts_store`.`id` = $nftTableId AND `dbt_nfts_store`.`token_id` = $tokenid")->getRow(); 
+		$result = $this->db->query("SELECT `dbt_nfts_store`.*, `dbt_nfts_store`.`id` as `nftId`, `dbt_user`.`f_name`, `dbt_user`.`l_name`, `dbt_user`.`username`, `dbt_user`.`image` as `user_image`, `dbt_nft_category`.`cat_name`, `dbt_nft_category`.`slug` `cat_slug`, `dbt_nft_collection`.`title` as `collection_title`, `dbt_nft_collection`.`slug` as `collection_slug`, `dbt_nft_listing`.*, `dbt_nft_listing`.`id` as `listing_id`,`dbt_staking`.* FROM `dbt_nfts_store` LEFT JOIN `dbt_user` ON `dbt_user`.`user_id`=`dbt_nfts_store`.`user_id` LEFT JOIN `dbt_nft_category` ON `dbt_nft_category`.`id`=`dbt_nfts_store`.`category_id` LEFT JOIN `dbt_nft_collection` ON `dbt_nft_collection`.`id`=`dbt_nfts_store`.`collection_id` LEFT JOIN `dbt_nft_listing` ON `dbt_nft_listing`.`nft_store_id`=`dbt_nfts_store`.`id` LEFT JOIN `dbt_staking` ON `dbt_staking`.`token_id`=`dbt_nfts_store`.`token_id` AND `dbt_nft_listing`.`status`=0 WHERE `dbt_nfts_store`.`id` = $nftTableId AND `dbt_nfts_store`.`token_id` = $tokenid  ")->getRow(); 
   
         return $result; 
 	}

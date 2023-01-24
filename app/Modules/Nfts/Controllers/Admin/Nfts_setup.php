@@ -50,8 +50,32 @@ class Nfts_setup extends BaseController
         return $this->template->admin_layout($data);
     }
 
-
-
+   public function nft_stake_form(){
+    $data['content'] = $this->BASE_VIEW . '\nft-setup\nft_stake_setup';
+        return $this->template->admin_layout($data);
+   }
+   public function stake_reward(){
+    $data = [
+        'daily_reward'      => $this->request->getVar('daily_reward', FILTER_SANITIZE_STRING),
+        'claimed_reward'    => $this->request->getVar('claimed_reward', FILTER_SANITIZE_STRING),
+        'unstake_days'   => $this->request->getVar('Unstake_Days', FILTER_SANITIZE_STRING),
+    ];
+    $builder = $this->db->table('dbt_reward');
+            //$ins = $builder->insert($data);
+            $update = $builder->update($data);    
+            $data['content'] = $this->BASE_VIEW . '\nft-setup\nft_stake_setup';
+            return $this->template->admin_layout($data);
+   }
+    public function nft_stake_list(){
+       
+		$result = $this->db->query("SELECT `dbt_nfts_store`.`name`, `dbt_nfts_store`.`id` as `nftId`, `dbt_staking`.`nft_id`, `dbt_user` .`username`  FROM `dbt_nfts_store`  
+		LEFT JOIN `dbt_staking` ON `dbt_staking`.`token_id` = `dbt_nfts_store`.`token_id`
+        LEFT JOIN `dbt_user` ON `dbt_user`.`user_id` = `dbt_nfts_store`.`user_id`
+		WHERE  `dbt_staking`.`status` = 'stake'  ORDER BY `dbt_staking`.`stake_timestamp` DESC LIMIT 15")->getResult();
+        $data['result']  =$result;
+        $data['content'] = $this->BASE_VIEW . '\nft-setup\nft_log';
+        return $this->template->admin_layout($data);
+    } 
     public function network_setup()
     {
 
@@ -219,7 +243,6 @@ class Nfts_setup extends BaseController
         $data['content'] = $this->BASE_VIEW . '\nft-setup\network_update';
         return $this->template->admin_layout($data);
     }
-
     public function getNetInfoAjax()
     {
         $netId  = $this->request->getVar("id");

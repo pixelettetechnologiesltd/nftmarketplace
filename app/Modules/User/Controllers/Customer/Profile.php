@@ -112,7 +112,57 @@ class Profile extends BaseController {
         $data['content']        = view($this->BASE_VIEW . '\profile',$data);
         return $this->template->website_layout($data);
 	}
+    //stackNFT
+    public function stackNft()
+ { 
+    return "stack-nft";
 
+     $data['title']        = display("Home");
+     @$cat_id              = $this->web_model->catidBySlug('home');
+     $data['article']      = $this->web_model->article($cat_id->cat_id);
+
+     #-------------------------------#
+     #pagination starts
+     #-------------------------------#
+     $limit                  = 15;
+     $page                   = ($this->uri->getSegment(1)) ? $this->uri->getSegment(1) : 0;
+     $page_number            = (!empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1);
+
+     $data['nfts']           = $result = $this->web_model->getAllNfts($limit, $page_number);
+     $total                  = $this->common_model->countRow('nfts_store', ['nfts_store.status' => 3]);
+
+     $data['topCollections'] = $this->web_model->topCollections();
+
+     $data['topSellers']     = $this->web_model->topSellers();
+
+     $featuredItemInfo = null;
+     if ($this->common_model->where_row('nfts_store', ['is_featured' => 1])) {
+         $featuredItemInfo = $this->web_model->getFeaturedNfts();
+     } else {
+         $featuredItemInfo = (isset($data['nfts'][0])) ? $data['nfts'][0] : null;
+     }
+
+     if (isset($featuredItemInfo)) {
+         $data['featured'] = $featuredItemInfo;
+         $data['featuredCollection'] = $this->common_model->where_row('nft_collection', ['id' => $featuredItemInfo->collection_id])->title;
+         $data['featuredOwner']      = $this->common_model->where_row('user', ['user_id' => $featuredItemInfo->user_id]);
+     }
+
+
+     $data['pager']   = $this->pager->makeLinks($page_number, $limit, $total);
+     #------------------------
+     # pagination ends
+     #------------------------ 
+     $data['isUser']            = $this->isUser;
+     $data['settings']           = $this->common_model->where_row('setting');
+     $data['frontendAssets']     = base_url('public/assets/website');
+     $data['total_data']         = $total;
+     $data['page_limit']         = $limit;
+     $data['content']            = view('themes/' . $this->templte_name->name . '/index', $data);
+     $data['f_name']     = (isset($this->isUser) ? $this->common_model->where_row('user', ['user_id' => $this->userId])->f_name  : '');
+     $data['l_name']     = (isset($this->isUser) ? $this->common_model->where_row('user', ['user_id' => $this->userId])->l_name  : '');
+     return $this->template->website_layout($data);
+ }
     /*
     |----------------------------------
     |   Update save profile 

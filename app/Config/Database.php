@@ -35,8 +35,8 @@ class Database extends \CodeIgniter\Database\Config
         'DSN'      => '',
         'hostname' => 'localhost',
         'username' => 'root',
-        'password' => 'root',
-        'database' => 'nft_2',
+        'password' => '',
+        'database' => 'ptleghas_nft',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => 'dbt_',
         'pConnect' => true,
@@ -54,7 +54,6 @@ class Database extends \CodeIgniter\Database\Config
         'failover' => array(),
         'save_queries' => TRUE
     ];
-
     /**
      * This database connection is used when
      * running PHPUnit database tests.

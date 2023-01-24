@@ -4,8 +4,6 @@ if (!isset($routes)) {
     $routes = \Config\Services::routes(true);
 }
 
-
-
 $routes->group('backend', ['filter' => 'admin_filter', 'namespace' => 'App\Modules\Nfts\Controllers\Admin'], function ($subroutes) {
     /*** Route for nft setting***/
     $subroutes->add('nft/nft_setup', 'Nfts_setup::index');
@@ -28,6 +26,11 @@ $routes->group('backend', ['filter' => 'admin_filter', 'namespace' => 'App\Modul
     $subroutes->add('nft/nft_req_user', 'Nfts_setup::nft_req_user');
     $subroutes->add('nft/req_form', 'Nfts_setup::req_form');
     $subroutes->add('nft/approved/(:num)', 'Nfts_setup::approval/$1');
+    //Route for NFT STAKE
+    
+    $subroutes->add('nft/nft_stake', 'Nfts_setup::nft_stake_form');
+    $subroutes->add('nft/stake_reward', 'Nfts_setup::stake_reward');
+    $subroutes->add('nft/nft_stake_list', 'Nfts_setup::nft_stake_list');
     // Wallet encrypt route
     $subroutes->add('nft/wallet_setup', 'Nfts_setup::encriptAdminWalletPrivateKey');
     $subroutes->add('nft/getAdminWallet', 'Nfts_setup::getAdminWallet');

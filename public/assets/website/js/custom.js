@@ -159,10 +159,6 @@ $(document).ready(function () {
            setInterval(auctionTimer, 1000);  // per second check this 
         }
          /** Auction js start */ 
-
-
-
-
         function getUserNfts(l) {
             let base_uri = $("#siteuri").attr('mybaseuri'); 
             let tab = $("#nftdata").attr('mytab');  

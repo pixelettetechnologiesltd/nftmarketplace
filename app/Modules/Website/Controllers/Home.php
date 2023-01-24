@@ -8,10 +8,11 @@ class Home extends BaseController
     function __construct()
     {
         // write your __construct
+      
 
     }
     public function index()
-    {
+    { 
 
         $data['title']        = display("Home");
         @$cat_id              = $this->web_model->catidBySlug('home');
@@ -25,6 +26,7 @@ class Home extends BaseController
         $page_number            = (!empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1);
 
         $data['nfts']           = $result = $this->web_model->getAllNfts($limit, $page_number);
+     
         $total                  = $this->common_model->countRow('nfts_store', ['nfts_store.status' => 3]);
 
         $data['topCollections'] = $this->web_model->topCollections();
@@ -59,26 +61,100 @@ class Home extends BaseController
         $data['l_name']     = (isset($this->isUser) ? $this->common_model->where_row('user', ['user_id' => $this->userId])->l_name  : '');
         return $this->template->website_layout($data);
     }
+   public function nft_stack(){
+
+    $current_time = time();
+    
+    //Adding 30 days
+    $days = $this->db->table('reward')->select('unstake_days')->get()->getResult();
+    $unstake_days=$days[0]->unstake_days;
+    $new_time = strtotime(+$unstake_days." days", $current_time);
+    $new_date = date("Y-m-d H:i:s", $new_time);
+    $stack_data = array(
+        'token_id'    => $this->uri->getSegment(3),
+        'nft_id'       => $this->uri->getSegment(4),
+        'owner_wallet'    => $this->uri->getSegment(5),
+        'stake_timestamp'   => date('Y-m-d H:i:s'),
+        'unstake_timestamp' => $new_date,
+         'nft_status'=>'stake'
+    );
+   
+    $result = $this->common_model->where_row('staking', array('nft_id' => $this->uri->getSegment(4),'nft_status' => 'unstake'));
+    $nft_id = $this->common_model->where_row('staking', array('nft_id' => $this->uri->getSegment(4),'nft_id' => $this->uri->getSegment(4)));
+    if($nft_id->nft_id==$this->uri->getSegment(4)){
+        $update=$this->web_model->update('staking', $stack_data, array('nft_id' => $this->uri->getSegment(4)));
+       
+        $this->session->setFlashdata('message',display('Successfully Nft Stake'));  
+        return redirect()->to(base_url('nft/asset/details/'.$this->uri->getSegment(3).'/'.$this->uri->getSegment(4).'/'.$this->uri->getSegment(5))); 
+    }
+    
+   else if(empty($result)){
+        $ins=$this->common_model->insert('staking', $stack_data);
+            $this->session->setFlashdata('message',display('Successfully Nft Stake'));  
+            return redirect()->to(base_url('nft/asset/details/'.$this->uri->getSegment(3).'/'.$this->uri->getSegment(4).'/'.$this->uri->getSegment(5))); 
+        
+    }
+    else if(!empty($result) && $result->nft_status=='unstake' ){
+    $ins=$this->common_model->insert('staking', $stack_data);
+  
+        $this->session->setFlashdata('message',display('Successfully Nft Stake'));  
+        return redirect()->to(base_url('nft/asset/details/'.$this->uri->getSegment(3).'/'.$this->uri->getSegment(4).'/'.$this->uri->getSegment(5))); 
+    
+    }
+   }
+  //nft stake
+  public function stackNFT(){
+    
+    $data['title']        = display("NFT Stake");
+    @$cat_id              = $this->web_model->catidBySlug('home');
+    $data['article']      = $this->web_model->article($cat_id->cat_id);
+
+    #-------------------------------#
+    #pagination starts
+    #-------------------------------#
+     $limit                  = 15;
+     $page                   = ($this->uri->getSegment(1)) ? $this->uri->getSegment(1) : 0;
+     $page_number            = (!empty($this->request->getVar('page')) ? $this->request->getVar('page') : 1);
+
+     $data['nfts']           = $result = $this->web_model->getStackNFT($limit, $page_number);
+    
+     $total                  = $this->common_model->countRow('nfts_store', ['nfts_store.status' => 3]);
+    
+     $data['topCollections'] = $this->web_model->topCollections();
+
+     $data['topSellers']     = $this->web_model->topSellers();
+
+    $data['pager']   = $this->pager->makeLinks($page_number, $limit, $total);
+
+    #------------------------
+    # pagination ends
+    #------------------------ 
+    $data['isUser']            = $this->isUser;
+    $data['settings']           = $this->common_model->where_row('setting');
+    $data['frontendAssets']     = base_url('public/assets/website');
+    $data['total_data']         = $total;
+    $data['page_limit']         = $limit;
+    $data['content']            = view('themes/' . $this->templte_name->name . '/nft_stack', $data);
 
 
+     return $this->template->website_layout($data);
+  }
     public function nft_details($tokenid = null, $nftTableId = null, $contractAdd = null)
     {
 
         if ($tokenid == null || $nftTableId == null) {
             return redirect()->to(base_url());
         }
-
         $data['nftInfo'] = $info = $this->web_model->getNftDetails($tokenid, $nftTableId);
         if (!isset($info)) {
             return redirect()->to(base_url());
         }
-
         $data['listings']               = $this->web_model->getListings($tokenid, $nftTableId);
         $data['moreNftsFromCollection'] = $this->web_model->getNfts(['nfts_store.status' => 3, 'nfts_store.id !=' => $nftTableId, 'nft_listing.status' => 0, 'nfts_store.collection_id' => $info->collection_id], 5);
-
-        $data['favourite']          = $this->common_model->countRow('favorite_items', ['nft_id' => $nftTableId, 'user_id' => $this->userId]);
-        $data['bid_info']            = $this->web_model->getNftWiseBid($info->nftId, $info->listing_id);
-        $data['activities']         = $this->common_model->item_activity($nftTableId, $tokenid);
+         
+        $data['favourite']    = $this->common_model->countRow('favorite_items', ['nft_id' => $nftTableId, 'user_id' => $this->userId]);
+        $data['bid_info']      = $this->web_model->getNftWiseBid($info->nftId, $info->listing_id);
+        $data['activities']   = $this->common_model->item_activity($nftTableId, $tokenid);
 
 
         if ($this->session->getFlashdata('exception') != null) {
@@ -86,7 +162,6 @@ class Home extends BaseController
         } else if ($this->session->getFlashdata('message') != null) {
             $data['message'] = $this->session->getFlashdata('message');
         }
-
         $data['frontendAssets']     = base_url('public/assets/website');
         $data['userId']             = (isset($this->userId)) ? $this->userId : '';
         $data['isUser']             = (isset($this->isUser) ? $this->isUser : '');
@@ -98,8 +173,6 @@ class Home extends BaseController
 
         return $this->template->website_layout($data);
     }
-
-
     public function collectionWiseNfts(String $slug = null)
     {
 
@@ -111,7 +184,6 @@ class Home extends BaseController
         if (empty($collectionInfo)) {
             return redirect()->to(base_url());
         }
-
         $data['ownerInfo'] = $this->common_model->where_row('user', ['user_id' => $collectionInfo->user_id]);
 
         $data['totalItem'] = $this->web_model->countRow('nfts_store', ['collection_id' => $collectionInfo->id, 'status' => 3]);
@@ -264,7 +336,7 @@ class Home extends BaseController
 
      
     }
-    }
+
 
 
     public function about()

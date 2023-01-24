@@ -78,6 +78,7 @@ class AutoloadConfig
 	 *
 	 * @var array
 	 */
+	
 	protected $coreClassmap = [
 		'Psr\Log\AbstractLogger'           => SYSTEMPATH . 'ThirdParty/PSR/Log/AbstractLogger.php',
 		'Psr\Log\InvalidArgumentException' => SYSTEMPATH . 'ThirdParty/PSR/Log/InvalidArgumentException.php',
