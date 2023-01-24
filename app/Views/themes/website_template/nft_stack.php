@@ -45,7 +45,7 @@
                             </div>
                             
                             <div class="card-body content position-relative mt-3">
-                                <div class="d-flex justify-content-between mb-2">
+                                <div class="d-flex justify-content-between                                                                                              mb-2">
                                     <div class="img-group">
                                         <?php foreach ($nft->favorite3img as $key => $image) {  ?>
                                             <a href="" class="user-avatar <?php if ($key > 0) echo 'ms-n3';  ?>">
@@ -75,7 +75,7 @@
   <a href="#">Daily Reward <span class="badge" style="color:blue !important"><?php echo esc($nft->daily_reward)."USDT"; ?> </span></a><br>
   <a href="#">Claim Reward <span class="badge" style="color:blue !important"><?php echo esc($nft->claimed_reward)."USDT"; ?></span></a><br>
   <a href="#">Total Reward <span class="badge" style="color:blue !important"><?php echo esc($nft->daily_reward+$nft->claimed_reward)."USDT";  ?></span></a><br>
-                                <a href="<?php echo base_url('nft/asset/details/' . $nft->token_id . '/' . $nft->nftId . '/' . $nft->contract_address); ?>" class="d-block fw-semi-bold h6 text-dark text-truncate title"><?php if (strlen($nft->name) > 14) {
+   <a href="<?php echo base_url('nft/asset/details/' . $nft->token_id . '/' . $nft->nftId . '/' . $nft->contract_address); ?>" class="d-block fw-semi-bold h6 text-dark text-truncate title"><?php if (strlen($nft->name) > 14) {
                                                                                                                                                                                                                                 echo substr(esc($nft->name), 0, 15) . '.. #' . esc($nft->token_id);
                                                                                                                                                                                                                             } else {
                                                                                                                                                                                                                                 echo esc($nft->name) . ' #' . esc($nft->token_id);                                                                                                                                                                                          }  ?> </a>

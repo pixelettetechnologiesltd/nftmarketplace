@@ -86,7 +86,6 @@ class Home extends BaseController
        
         $this->session->setFlashdata('message',display('Successfully Nft Stake'));  
         return redirect()->to(base_url('nft/asset/details/'.$this->uri->getSegment(3).'/'.$this->uri->getSegment(4).'/'.$this->uri->getSegment(5))); 
-     
     }
     
    else if(empty($result)){
@@ -153,9 +152,9 @@ class Home extends BaseController
         $data['listings']               = $this->web_model->getListings($tokenid, $nftTableId);
         $data['moreNftsFromCollection'] = $this->web_model->getNfts(['nfts_store.status' => 3, 'nfts_store.id !=' => $nftTableId, 'nft_listing.status' => 0, 'nfts_store.collection_id' => $info->collection_id], 5);
          
-        $data['favourite']          = $this->common_model->countRow('favorite_items', ['nft_id' => $nftTableId, 'user_id' => $this->userId]);
-        $data['bid_info']            = $this->web_model->getNftWiseBid($info->nftId, $info->listing_id);
-        $data['activities']         = $this->common_model->item_activity($nftTableId, $tokenid);
+        $data['favourite']    = $this->common_model->countRow('favorite_items', ['nft_id' => $nftTableId, 'user_id' => $this->userId]);
+        $data['bid_info']      = $this->web_model->getNftWiseBid($info->nftId, $info->listing_id);
+        $data['activities']   = $this->common_model->item_activity($nftTableId, $tokenid);
 
 
         if ($this->session->getFlashdata('exception') != null) {

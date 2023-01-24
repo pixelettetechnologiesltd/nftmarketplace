@@ -239,7 +239,7 @@ class Web_model {
 		LEFT JOIN `dbt_nft_listing` ON `dbt_nft_listing`.`nft_store_id`=`dbt_nfts_store`.`id` 
 		LEFT JOIN `dbt_staking` ON `dbt_staking`.`token_id` = `dbt_nfts_store`.`token_id`
 		LEFT JOIN `dbt_reward` ON `dbt_reward`.`stack_id` != `dbt_staking`.`id`
-		WHERE  `dbt_staking`.`nft_status`='stake' ")->getResult();
+		WHERE  `dbt_staking`.`nft_status`='stake'")->getResult();
 		foreach ($result as $key => $value) {
 			$value->favoriteVal = $this->countRow('favorite_items', ['nft_id'=>$value->nftId]);
 			$value->auctionDateTime = $this->calculateAuctionDateTimeStack($value->stake_timestamp, $value->unstake_timestamp);
@@ -247,8 +247,7 @@ class Web_model {
 			$value->favoriteActive = $this->countRow('favorite_items', ['nft_id'=> $value->nftId, 'user_id'=>$this->session->get('user_id')]);
 
 		}
-  
-		return $result;
+  		return $result;
 	 }
 	 public function nftLog($limit,$page_number){
 		$networkCheck = ($this->networkId != null) ? "AND `dbt_nfts_store`.`blockchain_id` = {$this->networkId}" : '';
